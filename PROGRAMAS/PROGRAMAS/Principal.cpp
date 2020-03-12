@@ -165,35 +165,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 	if (key == '-' && sphere_2.radius > 1) {
 		sphere_2.radius -= 0.25f;//disminuye el radio
 	}
-	/*
-	switch (key) {
-		case '1':
-			//Cambio de color a verde
-			sphere_2.red = 0;
-			sphere_2.green = 255;
-			sphere_2.blue = 0;
-			break;
-		case'2':
-			//Cambio de color a rojo
-			sphere_2.red = 255;
-			sphere_2.green = 0;
-			sphere_2.blue = 0;
-			break;
-		case '3':
-			//Cambio de color a rojo
-			sphere_2.red = 255;
-			sphere_2.green = 0;
-			sphere_2.blue = 0;
-			break;
-		case '4':
-			//Cambio de color a mix
-			sphere_2.red = 125;
-			sphere_2.green = 100;
-			sphere_2.blue = 96;
-			break;
-	}
-	*/
-
+	
 	if (key == '1') {
 		//Cambio de color a verde
 		sphere_2.red = 0;
