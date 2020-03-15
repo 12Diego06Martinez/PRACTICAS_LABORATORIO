@@ -22,10 +22,4 @@ private:
 
 };
 
-Sphere::Sphere()
-{
-}
 
-Sphere::~Sphere()
-{
-}

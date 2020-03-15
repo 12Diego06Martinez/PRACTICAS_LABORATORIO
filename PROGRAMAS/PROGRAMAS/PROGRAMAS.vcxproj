@@ -152,9 +152,11 @@
   <ItemGroup>
     <ClCompile Include="Principal.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

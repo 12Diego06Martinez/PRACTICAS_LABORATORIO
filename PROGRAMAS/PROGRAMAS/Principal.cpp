@@ -1,4 +1,6 @@
 #include "glut.h"
+#include "Sphere.h"
+#include <iostream>
 #include <math.h>
 
 //---------OBJETOS STRUCT-----------
@@ -48,7 +50,7 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv);
 	glutInitWindowSize(800, 600);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutCreateWindow("PRACTICA 1");
+	glutCreateWindow("PRACTICA 2");
 
 	//habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
@@ -96,14 +98,7 @@ int main(int argc, char* argv[])
 }*/
 void Camera(Mundo* m) {
 
-	float distance, angle;
-
-	distance = sqrt((m->x * m->x) + (m->z * m->z));
-	angle = atan2(m->z, m->x);
-	angle += 0.015f;
-	m->x = distance * cos(angle);
-	m->z = distance * sin(angle);
-}
+	
 
 void OnDraw(void)
 {
@@ -119,6 +114,8 @@ void OnDraw(void)
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//Dibujo
+	Sphere sphere1;
+	sphere1.SetColor(255, 0, 0);
 	//DrawPolygon();
 	//DrawTorus(torus_1);
 	
