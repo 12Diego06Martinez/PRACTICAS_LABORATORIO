@@ -10,10 +10,15 @@ public:
 	Sphere();
 	~Sphere();
 	void Draw();
-	void Move();
+	void Move(unsigned char key);
+	void MoreSize();
+	void LessSize();
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 	void SetPos(float x, float y, float z);
 	void SetRadius(float r);
+	float GetPos();
+	float GetRadius();
+
 private:
 	float x;
 	float y;

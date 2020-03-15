@@ -5,16 +5,20 @@
 class World 
 {
 public:
-	Sphere idk;
-	Sphere idk2;
 	World ();
 	~World ();
 	void RotateEye();
+	void Start();
+	void Draw();
+	void Move();
+	void Key(unsigned char key);
 
 private:
 	float x_eye;
 	float y_eye;
 	float z_eye;
+	Sphere sphere_1;
+	Sphere sphere_2;
 
 };
 
