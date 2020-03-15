@@ -1,5 +1,8 @@
 #pragma once
 #include "glut.h"
+//Para  evitar  problemas  derivados  de  la  posible  redefinición  de  clases
+#ifndef _ESFERA_H
+#define _ESFERA_H 
 
 class Sphere
 {
@@ -22,4 +25,4 @@ private:
 
 };
 
-
+#endif 

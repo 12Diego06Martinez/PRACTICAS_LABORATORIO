@@ -1,9 +1,12 @@
 #pragma once
 #include "glut.h"
+#include "Sphere.h"
 
 class World 
 {
 public:
+	Sphere idk;
+	Sphere idk2;
 	World ();
 	~World ();
 	void RotateEye();
