@@ -3,18 +3,8 @@
 
 //---------OBJETOS STRUCT-----------
 
-struct Sphere {
 
-	float radius;
-	float x;
-	float y;
-	float z;
-	unsigned char red;
-	unsigned char green;
-	unsigned char blue;
-
-};
-struct Torus {
+/*struct Torus {
 
 	float in_radius;
 	float out_radius;
@@ -24,7 +14,7 @@ struct Torus {
 	unsigned char red;
 	unsigned char green;
 	unsigned char blue;
-};
+};*/
 struct Mundo {
 
 	float x;
@@ -32,16 +22,16 @@ struct Mundo {
 	float z;
 };
 
-Sphere sphere_1 = { 1,3,0,0,0,255,255 }; //esfera colo cyan, quieta en (3,0,0), radio va cambiando con el tiempo
-Sphere sphere_2 = { 1,-3,0,0,255,0,0 }; //esfera que se mueve por el plano XY, cambia de color y radio mediante el teclado
-Torus torus_1 = { 1,6,0,0,0,0,250,0 }; //toroide estático
+//Sphere sphere_1 = { 1,3,0,0,0,255,255 }; //esfera colo cyan, quieta en (3,0,0), radio va cambiando con el tiempo
+//Sphere sphere_2 = { 1,-3,0,0,255,0,0 }; //esfera que se mueve por el plano XY, cambia de color y radio mediante el teclado
+//Torus torus_1 = { 1,6,0,0,0,0,250,0 }; //toroide estático
 Mundo miMundo = { -10,10,20 };
 
 //------------DECLARACION FUNCIONES-------------
 //Estas funciones se llamaránen la funcion OnDraw para dibujar las distintas formas
-void DrawSphere(Sphere s);
-void DrawTorus(Torus t);
-void DrawPolygon();
+
+//void DrawTorus(Torus t);
+//void DrawPolygon();
 void Camera(Mundo* m);
 
 //Funciones necesarias
@@ -81,21 +71,15 @@ int main(int argc, char* argv[])
 
 
 //------------IMPLEMENTACION FUNCIONES--------------
-void DrawSphere(Sphere e) {
 
-	glColor3ub(e.red, e.green, e.blue);
-	glTranslatef(e.x, e.y, e.z);
-	glutSolidSphere(e.radius, 25, 25);
-
-}
-void DrawTorus(Torus t) {
+/*void DrawTorus(Torus t) {
 
 	glColor3ub(t.red, t.green, t.blue);
 	glTranslatef(t.x, t.y, t.z);
 	glutSolidTorus(t.in_radius, t.out_radius, 20, 20);
 
-}
-void DrawPolygon() {
+}*/
+/*void DrawPolygon() {
 
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
@@ -109,7 +93,7 @@ void DrawPolygon() {
 	glVertex3f(-5.0f, 0.0f, 5.0f);
 	glEnd();
 	glEnable(GL_LIGHTING);
-}
+}*/
 void Camera(Mundo* m) {
 
 	float distance, angle;
@@ -135,11 +119,9 @@ void OnDraw(void)
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//Dibujo
-	DrawPolygon();
-	DrawTorus(torus_1);
-	DrawSphere(sphere_1);
-	DrawSphere(sphere_2);
-
+	//DrawPolygon();
+	//DrawTorus(torus_1);
+	
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutSwapBuffers();
@@ -196,12 +178,6 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 }
 void OnTimer(int value)
 {
-	//Esfera cyan que va cambiando su radio con el tiempo
-	sphere_1.radius += 0.025;
-	if (sphere_1.radius > 5) {
-		sphere_1.radius = 1.0f;
-	}
-
 	//Funcion que rota la vista de la camara
 	Camera(&miMundo);
 
