@@ -1,3 +1,7 @@
+#define _STDC_WANT_LIB_EXIT1__1
+#define _CRT_SECURE_NO_WARNINGS
+
+
 #include "glut.h"
 #include "Sphere.h"
 #include "World.h"
@@ -17,8 +21,6 @@
 	unsigned char blue;
 };*/
 
-//Sphere sphere_1 = { 1,3,0,0,0,255,255 }; //esfera colo cyan, quieta en (3,0,0), radio va cambiando con el tiempo
-//Sphere sphere_2 = { 1,-3,0,0,255,0,0 }; //esfera que se mueve por el plano XY, cambia de color y radio mediante el teclado
 //Torus torus_1 = { 1,6,0,0,0,0,250,0 }; //toroide estático
 
 
@@ -34,11 +36,12 @@ void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 
+World miMundo;
 
 //--------------MAIN--------------
 int main(int argc, char* argv[])
 {
-	World miMundo;
+	
 
 	//Inicializar el gestor de ventanas GLUT
 	//y crear la ventana
@@ -61,7 +64,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 
 	//Llamada a métodos
-	miMundo.Start();
+	
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
