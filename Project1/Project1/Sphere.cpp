@@ -41,6 +41,5 @@ void Sphere::Draw() {
 
 void Sphere::Move() {
 
-	
-}
 
+}

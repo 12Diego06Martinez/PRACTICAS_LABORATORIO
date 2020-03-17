@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{2847013A-1AA5-4C9E-9ED7-F02744528D09}</ProjectGuid>
-    <RootNamespace>PROGRAMAS</RootNamespace>
+    <ProjectGuid>{0DDF5CD4-F837-4C22-A506-315B0F456D44}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,12 +71,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -87,12 +91,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -102,13 +104,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,14 +118,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -138,15 +135,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\PROGRAMAS\PROGRAMAS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -1,14 +1,16 @@
 #pragma once
 #include "glut.h"
-//Para  evitar  problemas  derivados  de  la  posible  redefinición  de  clases
 #ifndef _ESFERA_H
 #define _ESFERA_H 
+
+//Para  evitar  problemas  derivados  de  la  posible  redefinición  de  clases
+
 
 class Sphere
 {
 public:
 	Sphere();
-	~Sphere();
+	//~Sphere();
 	void Draw();
 	void Move();
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
@@ -27,3 +29,4 @@ private:
 };
 
 #endif 
+

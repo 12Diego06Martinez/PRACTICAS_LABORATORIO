@@ -1,11 +1,6 @@
-#define _STDC_WANT_LIB_EXIT1__1
-#define _CRT_SECURE_NO_WARNINGS
-
-
 #include "glut.h"
 #include "Sphere.h"
 #include "World.h"
-#include <iostream>
 #include <math.h>
 
 //---------OBJETOS STRUCT-----------
@@ -41,7 +36,7 @@ World miMundo;
 //--------------MAIN--------------
 int main(int argc, char* argv[])
 {
-	
+
 
 	//Inicializar el gestor de ventanas GLUT
 	//y crear la ventana
@@ -64,7 +59,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 
 	//Llamada a métodos
-	
+
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -109,9 +104,9 @@ void OnDraw(void)
 
 	//LLAMAR AL MÉTODO DRAW DE LA CLASE MUNDO   (dibuja todos los objetos)
 
-	
 
-	
+
+
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutSwapBuffers();
@@ -126,7 +121,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnTimer(int value)
 {
 	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO
-	
+
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutTimerFunc(25, OnTimer, 0);

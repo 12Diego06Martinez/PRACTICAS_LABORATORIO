@@ -26,10 +26,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="World.h">
+    <ClInclude Include="Sphere.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Sphere.h">
+    <ClInclude Include="World.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

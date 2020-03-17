@@ -10,7 +10,7 @@ void World::Initialize() {
 	z_eye = 20;
 	//Damos valor inicial al color, posición y radio de la esfera
 	Sphere sphere_1();//¿LLAMADA AL CONSTRUCTOR?
-	
+
 }
 
 void World::Draw() {
@@ -20,9 +20,9 @@ void World::Draw() {
 	gluLookAt(x_eye, y_eye, z_eye,  // posicion del ojo
 		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
-	
+
 	//TODO--Pintamos los objetos
-	
+
 
 }
 
@@ -36,14 +36,14 @@ void World::Key(unsigned char key) {
 	//Se llamará a este método en la función OnKeyboardDown
 
 	//TODO--CAMBIOS DE POSICIÓN
-	
+
 
 	//TODO--CAMBIOS DE RADIO
-	
+
 
 	//TODO--CAMBIOS DE COLOR
 
-	
+
 }
 
 void World::RotateEye() {

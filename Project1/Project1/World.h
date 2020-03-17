@@ -2,11 +2,11 @@
 #include "glut.h"
 #include "Sphere.h"
 
-class World 
+class World
 {
 public:
-	World ();
-	~World ();
+	//World();
+	//~World();
 	void RotateEye();
 	void Initialize();
 	void Draw();
@@ -18,6 +18,5 @@ private:
 	float y_eye;
 	float z_eye;
 	Sphere sphere_1;
-	
-};
 
+};
