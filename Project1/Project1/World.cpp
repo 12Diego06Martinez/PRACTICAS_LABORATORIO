@@ -22,8 +22,10 @@ void World::Draw() {
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
 
 	//TODO--Pintamos los objetos
-
-
+	sphere_1.SetColor(255, 0, 0);
+	sphere_1.SetPos(0, 0, 0);
+	sphere_1.SetRadius(1.0);
+	sphere_1.Draw();
 }
 
 void World::Move() {

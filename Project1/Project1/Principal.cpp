@@ -1,3 +1,6 @@
+//#define _STDC_WANT_IB_EXIT1__1
+//#define _CRT_SECURE_NO_WARNINGS
+
 #include "glut.h"
 #include "Sphere.h"
 #include "World.h"
@@ -59,7 +62,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 
 	//Llamada a métodos
-
+	miMundo.Initialize();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();

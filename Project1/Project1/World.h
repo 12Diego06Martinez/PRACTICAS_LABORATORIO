@@ -18,5 +18,4 @@ private:
 	float y_eye;
 	float z_eye;
 	Sphere sphere_1;
-
 };
