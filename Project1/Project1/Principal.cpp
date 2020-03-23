@@ -106,10 +106,7 @@ void OnDraw(void)
 	glLoadIdentity();
 
 	//LLAMAR AL MÉTODO DRAW DE LA CLASE MUNDO   (dibuja todos los objetos)
-
-
-
-
+	miMundo.Draw();
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutSwapBuffers();

@@ -1,6 +1,5 @@
 #include "Sphere.h"
 
-
 Sphere::Sphere() {
 	//Constructor
 	x = y = z = 0;
@@ -8,7 +7,6 @@ Sphere::Sphere() {
 	red = green = blue = 150;
 
 }
-
 
 void Sphere::SetColor(unsigned char r, unsigned char g, unsigned char b) {
 	//Configuramos el color
