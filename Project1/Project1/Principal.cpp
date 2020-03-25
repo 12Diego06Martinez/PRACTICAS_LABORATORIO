@@ -92,7 +92,7 @@ void OnDraw(void)
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//miMundo.Key(key);
+	miMundo.Key(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();

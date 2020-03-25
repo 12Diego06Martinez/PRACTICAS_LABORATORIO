@@ -53,7 +53,7 @@ void World::Move() {
 	z_eye = distance * sin(angle);
 
 	//Actualización esfera
-	sphere_1.Move();
+	sphere_2.Move();
 }
 
 void World::Key(unsigned char key) {
@@ -74,8 +74,24 @@ void World::Key(unsigned char key) {
 	}
 	
 
-	//TODO--CAMBIOS DE COLOR
-
-
+	//CAMBIOS DE COLOR
+	if (key == '1') {
+		sphere_1.SetColor(255, 0, 0);
+	}
+	if (key == '2') {
+		sphere_1.SetColor(0, 255, 0);
+	}
+	if (key == '3') {
+		sphere_1.SetColor(0, 0, 255);
+	}
+	if (key == '4') {
+		sphere_2.SetColor(255, 255, 255);
+	}
+	if (key == '5') {
+		sphere_2.SetColor(0, 255, 0);
+	}
+	if (key == '6') {
+		sphere_2.SetColor(0, 0, 255);
+	}
 }
 
