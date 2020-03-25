@@ -1,8 +1,8 @@
 #pragma once
-#include "glut.h"
+
 #ifndef _ESFERA_H
 #define _ESFERA_H 
-
+#include "glut.h"
 //Para  evitar  problemas  derivados  de  la  posible  redefinición  de  clases
 
 
@@ -10,12 +10,13 @@ class Sphere
 {
 public:
 	Sphere();
-	//~Sphere();
+	//~Sphere()
 	void Draw();
 	void Move();
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 	void SetPos(float xi, float yi, float zi);
 	void SetRadius(float r);
+	float GetRadius();
 
 private:
 	float x;

@@ -6,35 +6,13 @@
 #include "World.h"
 #include <math.h>
 
-//---------OBJETOS STRUCT-----------
-/*struct Torus {
-
-	float in_radius;
-	float out_radius;
-	float x;
-	float y;
-	float z;
-	unsigned char red;
-	unsigned char green;
-	unsigned char blue;
-};*/
-
-//Torus torus_1 = { 1,6,0,0,0,0,250,0 }; //toroide estático
-
-
-//------------DECLARACION FUNCIONES-------------
-//Estas funciones se llamaránen la funcion OnDraw para dibujar las distintas formas
-
-//void DrawTorus(Torus t);
-//void DrawPolygon();
-
+World miMundo;
 
 //Funciones necesarias
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 
-World miMundo;
 
 //--------------MAIN--------------
 int main(int argc, char* argv[])
@@ -111,17 +89,20 @@ void OnDraw(void)
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutSwapBuffers();
 }
+
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-
+	//miMundo.Key(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
 }
+
 void OnTimer(int value)
 {
 	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO
-
+	miMundo.Move();
+	
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutTimerFunc(25, OnTimer, 0);
