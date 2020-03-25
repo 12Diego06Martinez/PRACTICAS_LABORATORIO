@@ -11,7 +11,6 @@ public:
 	void Draw();
 	void Move();
 	void Key(unsigned char key);
-	
 
 private:
 	float x_eye;

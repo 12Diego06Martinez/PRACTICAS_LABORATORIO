@@ -10,8 +10,13 @@ void World::Initialize() {
 	z_eye = 20.0;
 
 	//Damos valor inicial al color, posición y radio de la esfera definidos en el constructor
-	Sphere sphere_1();
-	Sphere sphere_2(); 
+	sphere_1.SetRadius(2);
+	sphere_1.SetColor(0, 255, 255);
+	sphere_1.SetPos(2, 2, 2);
+	sphere_2.SetColor(255, 0, 0);
+	sphere_2.SetPos(0, 5, -2);
+	sphere_2.SetRadius(1.0);
+
 }
 
 void World::Draw() {
@@ -35,9 +40,6 @@ void World::Draw() {
 	glEnable(GL_LIGHTING);
 
 	//Pintamos los objetos
-	sphere_2.SetColor(255, 0, 0);
-	sphere_2.SetPos(0, 5, -2);
-	sphere_2.SetRadius(1.0);
 	sphere_1.Draw();
 	sphere_2.Draw();
 }
@@ -53,7 +55,7 @@ void World::Move() {
 	z_eye = distance * sin(angle);
 
 	//Actualización esfera
-	sphere_2.Move();
+	//sphere_1.Move();
 }
 
 void World::Key(unsigned char key) {
@@ -75,6 +77,9 @@ void World::Key(unsigned char key) {
 	
 
 	//CAMBIOS DE COLOR
+	if (key == '0') {
+		sphere_1.SetColor(255, 255, 255);
+	}
 	if (key == '1') {
 		sphere_1.SetColor(255, 0, 0);
 	}
