@@ -58,21 +58,6 @@ int main(int argc, char* argv[])
 	glutSolidTorus(t.in_radius, t.out_radius, 20, 20);
 
 }*/
-/*void DrawPolygon() {
-
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-	glColor3ub(255, 0, 0);
-	glVertex3f(5.0f, 0.0f, 5.0f);
-	glColor3ub(255, 255, 0);
-	glVertex3f(5.0f, 0.0f, -5.0f);
-	glColor3ub(0, 255, 255);
-	glVertex3f(-5.0f, 0.0f, -5.0f);
-	glColor3ub(255, 255, 255);
-	glVertex3f(-5.0f, 0.0f, 5.0f);
-	glEnd();
-	glEnable(GL_LIGHTING);
-}*/
 
 void OnDraw(void)
 {
@@ -92,6 +77,7 @@ void OnDraw(void)
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
+	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
 	miMundo.Key(key);
 
 	//NO BORRAR ESTAS LINEAS
@@ -100,7 +86,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void OnTimer(int value)
 {
-	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO
+	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO (actualiza mundo y esferas)
 	miMundo.Move();
 	
 

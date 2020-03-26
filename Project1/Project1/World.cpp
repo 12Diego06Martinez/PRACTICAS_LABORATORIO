@@ -55,48 +55,50 @@ void World::Move() {
 	z_eye = distance * sin(angle);
 
 	//Actualización esfera
-	//sphere_1.Move();
+	sphere_1.Move();
 }
 
 void World::Key(unsigned char key) {
 	//Se llamará a este método en la función OnKeyboardDown
 
-	//TODO--CAMBIOS DE POSICIÓN
-
+	float radius = sphere_2.GetRadius();
+	
+	//CAMBIOS DE POSICIÓN
+	sphere_2.ChangePos(key);
 
 	//TODO--CAMBIOS DE RADIO
-	if (key == '+' && sphere_1.GetRadius() <= 5.0) {
-		float radius = sphere_1.GetRadius();
-		sphere_1.SetRadius(radius += 0.15);
+	if (key == '+' && sphere_2.GetRadius() <= 5.0) {
+		sphere_2.SetRadius(radius += 0.15); //aumenta radio
 	}
 
-	if (key == '-' && sphere_1.GetRadius() >= 1.0) {
-		float radius = sphere_1.GetRadius();
-		sphere_1.SetRadius(radius -= 0.15);
+	if (key == '-' && sphere_2.GetRadius() >= 1.0) {
+		//float radius = sphere_2.GetRadius();
+		sphere_2.SetRadius(radius -= 0.15); //disminuye radio
 	}
 	
 
 	//CAMBIOS DE COLOR
 	if (key == '0') {
-		sphere_1.SetColor(255, 255, 255);
-	}
-	if (key == '1') {
-		sphere_1.SetColor(255, 0, 0);
-	}
-	if (key == '2') {
-		sphere_1.SetColor(0, 255, 0);
-	}
-	if (key == '3') {
-		sphere_1.SetColor(0, 0, 255);
-	}
-	if (key == '4') {
+		sphere_1.SetColor(255, 255, 255); //ambas esferas blancas
 		sphere_2.SetColor(255, 255, 255);
 	}
+	if (key == '1') {
+		sphere_1.SetColor(255, 0, 0); //e1 rojo
+	}
+	if (key == '2') {
+		sphere_1.SetColor(0, 255, 0); //e1 verde
+	}
+	if (key == '3') {
+		sphere_1.SetColor(0, 0, 255); //e1 azul
+	}
+	if (key == '4') {
+		sphere_2.SetColor(255, 0, 0); //e2 roja
+	}
 	if (key == '5') {
-		sphere_2.SetColor(0, 255, 0);
+		sphere_2.SetColor(0, 255, 0); //e2 verde
 	}
 	if (key == '6') {
-		sphere_2.SetColor(0, 0, 255);
+		sphere_2.SetColor(0, 0, 255); //e2 azul
 	}
 }
 

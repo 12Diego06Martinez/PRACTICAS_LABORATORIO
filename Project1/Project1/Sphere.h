@@ -17,6 +17,7 @@ public:
 	void SetPos(float xi, float yi, float zi);
 	void SetRadius(float r);
 	float GetRadius();
+	void ChangePos(unsigned char key);
 
 private:
 	float x;
