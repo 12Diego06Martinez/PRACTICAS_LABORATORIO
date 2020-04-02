@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Sphere.h" />
+    <ClInclude Include="src\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Principal.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="src\World.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{0DDF5CD4-F837-4C22-A506-315B0F456D44}</ProjectGuid>
@@ -73,6 +82,8 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>.\bin</OutDir>
+    <IntDir>.\temp</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -81,6 +92,8 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>.\bin</OutDir>
+    <IntDir>.\temp</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -143,15 +156,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Principal.cpp" />
-    <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="World.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Sphere.h" />
-    <ClInclude Include="World.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
