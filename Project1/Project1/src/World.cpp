@@ -3,7 +3,18 @@
 
 //////////////////////////////CONSTRUCTOR///////////////////
 World::World() {
+	//Posición del ojo
+	x_eye = 0;
+	y_eye = 7.5;
+	z_eye = 30;
+	//Inicialización esfera
+	sphere.SetColor(255, 0, 0);
+	sphere.SetPos(2, 4);
+	sphere.SetRadius(1.5);
+	//Inicialización bonus
 	//TODO--
+	//Inicialización caja
+	
 }
 
 /////////////////////////////MÉTODOS////////////////////////
@@ -14,6 +25,6 @@ void World::Draw() {
 		0.0, 1.0, 0.0);
 
 	//Dibujamos objetos
-	
+	sphere.Draw();
 }
 

@@ -8,6 +8,9 @@ public:
 	//virtual ~Sphere();
 	void Draw();
 	void Move(float t);
+	void SetPos(float x, float y);
+	void SetColor(unsigned char r, unsigned char g, unsigned char b);
+	void SetRadius(float rad);
 private:
 	float radius;
 	unsigned char red;

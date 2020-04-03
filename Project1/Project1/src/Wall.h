@@ -7,6 +7,7 @@ public:
 	Wall();
 	//virtual ~Wall();
 	void Draw();
+	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 private:
 	unsigned char red;
 	unsigned char green;

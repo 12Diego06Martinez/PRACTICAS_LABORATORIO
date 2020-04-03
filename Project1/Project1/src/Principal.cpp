@@ -2,9 +2,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "glut.h"
+#include "World.h"
 
 
-//World miMundo;
+World miMundo;
 
 
 //Funciones necesarias
@@ -65,7 +66,7 @@ void OnDraw(void)
 	glLoadIdentity();
 
 	//LLAMAR AL MÉTODO DRAW DE LA CLASE MUNDO   (dibuja todos los objetos)
-	//miMundo.Draw();
+	miMundo.Draw();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS
