@@ -1,15 +1,15 @@
-#include "glut.h"
 #include "Box.h"
 
-
+////////////////////////CONSTRUCTOR////////////////////////////
 Box::Box() {
 	//TODO--
 }
 
+///////////////////////////MÉTODOS///////////////////////////
 void Box::Draw() {
-	//TODO--
-	floor.Draw();
+	//Dibujamos cuatro paredes accediendo a su método Draw()
 	roof.Draw();
-	left.Draw();
-	right.Draw();
+	floor.Draw();
+	left_wall.Draw();
+	right_wall.Draw();
 }

@@ -1,12 +1,11 @@
 #pragma once
 #include "Vector2D.h"
 
-
 class Human
 {
 public:
 	Human();
-	virtual ~Human();
+	//virtual ~Human();
 	void Draw();
 	void Move(float t);
 private:

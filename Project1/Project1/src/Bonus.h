@@ -1,12 +1,10 @@
 #pragma once
 #include "Vector2D.h"
 
-
-class Bonus
-{
+class Bonus{
 public:
 	Bonus();
-	virtual ~Bonus();
+	//virtual ~Bonus();
 	void Draw();
 	void Move(float t);
 private:

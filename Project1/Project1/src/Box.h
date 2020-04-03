@@ -1,17 +1,16 @@
 #pragma once
 #include "Wall.h"
 
-
 class Box
 {
 public:
 	Box();
-	virtual ~Box();
+	//virtual ~Box();
 	void Draw();
 private:
-	Wall floor;
 	Wall roof;
-	Wall right;
-	Wall left;
+	Wall floor;
+	Wall left_wall;
+	Wall right_wall;
 };
 

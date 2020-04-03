@@ -1,11 +1,11 @@
 #pragma once
 #include "Vector2D.h"
 
-
-class Wall{
+class Wall
+{
 public:
 	Wall();
-	virtual ~Wall();
+	//virtual ~Wall();
 	void Draw();
 private:
 	unsigned char red;
@@ -14,3 +14,4 @@ private:
 	Vector2D limit1;
 	Vector2D limit2;
 };
+

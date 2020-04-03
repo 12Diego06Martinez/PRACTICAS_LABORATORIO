@@ -1,15 +1,17 @@
+#include "Bonus.h"
 #include <stdlib.h>
 #include "glut.h"
-#include "Bonus.h"
 
 
+
+////////////////////////CONSTRUCTOR////////////////////////////
 Bonus::Bonus() {
-	//TODO--
 	side = 2;
 }
 
+///////////////////////////MÉTODOS///////////////////////////
 void Bonus::Draw() {
-	//TODO--
+	//Dibujamos el bonus como un cubo de color aleatorio
 	glPushMatrix();  
 	glTranslatef(position.x, position.y, 0);  
 	glRotatef(30, 1, 1, 1);  
@@ -20,7 +22,7 @@ void Bonus::Draw() {
 }
 
 void Bonus::Move(float t) {
-	//TODO--
+	//Definimos las ecuaciones de movimiento
 	position.x = position.x + speed.x * t + 0.5f * aceleration.x * t * t;  
 	position.y = position.y + speed.y * t + 0.5f * aceleration.y * t * t;  
 	speed.x = speed.x + aceleration.x * t; 

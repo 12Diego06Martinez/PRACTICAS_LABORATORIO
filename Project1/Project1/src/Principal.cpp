@@ -1,12 +1,11 @@
-//#define _STDC_WANT_IB_EXIT1__1
-//#define _CRT_SECURE_NO_WARNINGS
+#define _STDC_WANT_IB_EXIT1__1
+#define _CRT_SECURE_NO_WARNINGS
 
 #include "glut.h"
-#include "Sphere.h"
-#include "World.h"
-#include <math.h>
 
-World miMundo;
+
+//World miMundo;
+
 
 //Funciones necesarias
 void OnDraw(void); //esta funcion sera llamada para dibujar
@@ -17,8 +16,6 @@ void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecl
 //--------------MAIN--------------
 int main(int argc, char* argv[])
 {
-
-
 	//Inicializar el gestor de ventanas GLUT
 	//y crear la ventana
 	glutInit(&argc, argv);
@@ -61,7 +58,6 @@ int main(int argc, char* argv[])
 
 void OnDraw(void)
 {
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Borrado de la pantalla
 
 	//Definimos el punto de vista
@@ -70,6 +66,7 @@ void OnDraw(void)
 
 	//LLAMAR AL MÉTODO DRAW DE LA CLASE MUNDO   (dibuja todos los objetos)
 	//miMundo.Draw();
+	
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutSwapBuffers();

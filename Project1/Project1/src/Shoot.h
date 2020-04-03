@@ -1,12 +1,11 @@
 #pragma once
 #include "Vector2D.h"
 
-
 class Shoot
 {
 public:
 	Shoot();
-	virtual ~Shoot();
+	//virtual ~Shoot();
 	void Draw();
 	void Move(float t);
 private:
