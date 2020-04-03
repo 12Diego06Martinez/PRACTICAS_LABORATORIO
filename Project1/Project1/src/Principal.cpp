@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 
 	//Llamada a métodos
-	miMundo.Initialize();
+	//miMundo.Initialize();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -69,7 +69,7 @@ void OnDraw(void)
 	glLoadIdentity();
 
 	//LLAMAR AL MÉTODO DRAW DE LA CLASE MUNDO   (dibuja todos los objetos)
-	miMundo.Draw();
+	//miMundo.Draw();
 
 	//NO BORRAR NUNCA ESTAS LINEAS
 	glutSwapBuffers();
@@ -78,7 +78,7 @@ void OnDraw(void)
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	miMundo.Key(key);
+	//miMundo.Key(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
@@ -87,7 +87,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnTimer(int value)
 {
 	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO (actualiza mundo y esferas)
-	miMundo.Move();
+	//miMundo.Move();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS

@@ -1,3 +1,4 @@
+#include "glut.h"
 #include "World.h"
 #include <math.h>
 
@@ -5,17 +6,33 @@ void World::Initialize() {
 	//Se llamará a este método en el main
 
 	//Damos valor iniciala la posición del ojo
-	x_eye = -10.0;
-	y_eye = 10.0;
-	z_eye = 20.0;
+	x_eye = 0.0;
+	y_eye = 7.5;
+	z_eye = 30.0;
 
-	//Damos valor inicial al color, posición y radio de la esfera definidos en el constructor
-	sphere_1.SetRadius(2);
-	sphere_1.SetColor(0, 255, 255);
-	sphere_1.SetPos(2, 2, 2);
-	sphere_2.SetColor(255, 0, 0);
-	sphere_2.SetPos(0, 5, -2);
-	sphere_2.SetRadius(1.0);
+	//Valor incial esfera
+	sphere.position.x = 2;
+	sphere.positicion.y = 4;
+	sphere.radius = 1.5f;
+	sphere.red = 0;
+	sphere.green = 0;
+	sphere.blue = 255;
+
+	//Valor inicial bonus
+	bonus.position.x = 5.0f;
+	bonus.positon.y = 5.0f;
+
+	//Valor inicial disparo
+	shoot.position.x = -5.0f;
+	shoot.position.y = 0.0f;
+
+	//Valor inicial plataforma
+	platform.limit1.x = -5.0f;  
+	platform.limite2.x = 5.0f;  
+	platform.limit1.y = 9.0f;  
+	platform.limit2.y = 9.0f;
+
+
 
 }
 
@@ -24,50 +41,46 @@ void World::Draw() {
 
 	//Situamos la vista del ojo
 	gluLookAt(x_eye, y_eye, z_eye,  // posicion del ojo
-		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
+		0.0, y_eye, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
 
-	//Voy a dibujar un suelo para comprobar la rotacion de la camara
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-		glColor3ub(255, 0, 0);
-		glVertex3f(-5.0f, 0, -5.0f);
-		glVertex3f(-5.0f, 0, 5.0f);
-		glColor3ub(255, 255, 0);
-		glVertex3f(5.0f, 0, 5.0f);
-		glVertex3f(5.0f, 0, -5.0f);
-	glEnd();
-	glEnable(GL_LIGHTING);
-
 	//Pintamos los objetos
-	sphere_1.Draw();
-	sphere_2.Draw();
+	sphere.Draw();
+	box.Draw();
+	human.Draw();
+	shoot.Draw();
+	platform.Draw();
+	bonus.Draw();
 }
 
-void World::Move() {
+void World::Move(float t) {
 	//Se llamará a este método en la función Timer
 
 	//Actualización posición cámara
-	float distance = sqrt(((double)x_eye * (double)x_eye) + ((double)z_eye * (double)z_eye));
+	/*float distance = sqrt(((double)x_eye * (double)x_eye) + ((double)z_eye * (double)z_eye));
 	float angle = atan2(z_eye, x_eye);
 	angle += 0.015f;
 	x_eye = distance * cos(angle);
 	z_eye = distance * sin(angle);
+	*/
 
-	//Actualización esfera
-	sphere_1.Move();
+	human.Move(0.025f);  
+	sphere.Move(0.025f);  
+	bonus.Move(0.025f);  
+	shoot.Move(0.025f);
+	
 }
 
-void World::Key(unsigned char key) {
+/*void World::Key(unsigned char key) {
 	//Se llamará a este método en la función OnKeyboardDown
 
-	float radius = sphere_2.GetRadius();
+	//float radius = sphere_2.GetRadius();
 	
 	//CAMBIOS DE POSICIÓN
-	sphere_2.ChangePos(key);
+	//sphere_2.ChangePos(key);
 
 	//TODO--CAMBIOS DE RADIO
-	if (key == '+' && sphere_2.GetRadius() <= 5.0) {
+	/*if (key == '+' && sphere_2.GetRadius() <= 5.0) {
 		sphere_2.SetRadius(radius += 0.15); //aumenta radio
 	}
 
@@ -78,7 +91,7 @@ void World::Key(unsigned char key) {
 	
 
 	//CAMBIOS DE COLOR
-	if (key == '0') {
+	/*if (key == '0') {
 		sphere_1.SetColor(255, 255, 255); //ambas esferas blancas
 		sphere_2.SetColor(255, 255, 255);
 	}
@@ -101,4 +114,4 @@ void World::Key(unsigned char key) {
 		sphere_2.SetColor(0, 0, 255); //e2 azul
 	}
 }
-
+*/

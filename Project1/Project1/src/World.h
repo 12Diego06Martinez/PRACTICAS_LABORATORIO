@@ -1,5 +1,8 @@
 #pragma once
-#include "glut.h"
+#include "Box.h"
+#include "Human.h"
+#include "Bonus.h"
+#include "Shoot.h"
 #include "Sphere.h"
 
 class World
@@ -7,15 +10,17 @@ class World
 public:
 	//World();
 	//~World();
-	void Initialize();
 	void Draw();
-	void Move();
-	void Key(unsigned char key);
-
+	void Move(float t);
+	void Initialize();
 private:
 	float x_eye;
 	float y_eye;
 	float z_eye;
-	Sphere sphere_1;
-	Sphere sphere_2;
+	Shoot shoot;
+	Sphere sphere;
+	Human human;
+	Box box;
+	Bonus bonus;
+	Wall platform;
 };
