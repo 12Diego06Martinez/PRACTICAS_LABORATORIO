@@ -12,8 +12,8 @@ World::World() {
 	sphere.SetPos(2, 4);
 	sphere.SetRadius(1.5);
 	//Inicialización bonus
-	//bonus.SetPos(10, 5);
-	bonus.SetSide(0.5);
+	bonus.SetPos(5, 0);
+	bonus.SetSide(2.5);
 	//Inicialización caja
 	
 }
@@ -28,5 +28,6 @@ void World::Draw() {
 	//Dibujamos objetos
 	sphere.Draw();
 	bonus.Draw();
+	human.Draw();
 }
 

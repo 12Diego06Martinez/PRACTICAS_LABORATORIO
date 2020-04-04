@@ -3,8 +3,9 @@
 
 ////////////////////////CONSTRUCTOR///////////////////
 Sphere::Sphere() {
-	radius = 2.0f;
+	radius = 1.0f;
 	red = green = blue = 255;
+	aceleration.y = -9.8f;
 }
 
 ///////////////////////MÉTODOS///////////////////////
