@@ -7,6 +7,8 @@ public:
 	//virtual ~Bonus();
 	void Draw();
 	void Move(float t);
+	void SetPos(float x, float y);
+	void SetSide(float s);
 private:
 	float side;
 	Vector2D position;

@@ -7,6 +7,7 @@
 ////////////////////////CONSTRUCTOR////////////////////////////
 Bonus::Bonus() {
 	side = 2;
+	position.x = position.y = 0;
 }
 
 ///////////////////////////MÉTODOS///////////////////////////
@@ -27,4 +28,13 @@ void Bonus::Move(float t) {
 	position.y = position.y + speed.y * t + 0.5f * aceleration.y * t * t;  
 	speed.x = speed.x + aceleration.x * t; 
 	speed.y = speed.y + aceleration.y * t;
+}
+
+void Bonus::SetPos(float x, float y) {
+	position.x = x;
+	position.y = y;
+}
+
+void Bonus::SetSide(float s) {
+	side = s;
 }

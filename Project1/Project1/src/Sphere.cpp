@@ -25,8 +25,8 @@ void Sphere::Move(float t) {
 }
 
 void Sphere::SetPos(float x, float y) {
-	x = position.x;
-	y = position.y;
+	position.x = x;
+	position.y=y;
 }
 
 void Sphere::SetColor(unsigned char r, unsigned char g, unsigned char b) {
