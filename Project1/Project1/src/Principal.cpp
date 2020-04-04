@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 
 	//Llamada a métodos
-	//miMundo.Initialize();
+	miMundo.Initialize();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -85,7 +85,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnTimer(int value)
 {
 	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO (actualiza mundo y esferas)
-	//miMundo.Move();
+	miMundo.Move();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS

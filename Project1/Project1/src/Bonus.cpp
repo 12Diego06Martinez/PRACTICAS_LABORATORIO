@@ -7,6 +7,7 @@
 ////////////////////////CONSTRUCTOR////////////////////////////
 Bonus::Bonus() {
 	side = 2;
+	aceleration.y = -9.8f;
 }
 
 ///////////////////////////MÉTODOS///////////////////////////
@@ -35,5 +36,7 @@ void Bonus::SetPos(float x, float y) {
 }
 
 void Bonus::SetSide(float s) {
-	side = s;
+	if (s > 0) {
+		side = s;
+	}
 }

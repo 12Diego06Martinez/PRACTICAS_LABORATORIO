@@ -13,6 +13,7 @@ public:
 	//virtual ~World();
 	void Draw();
 	void Move();
+	void Initialize();
 private:
 	float x_eye;
 	float y_eye;

@@ -37,6 +37,9 @@ void Sphere::SetColor(unsigned char r, unsigned char g, unsigned char b) {
 }
 
 void Sphere::SetRadius(float rad) {
-	radius = rad;
+	if (rad > 0) {
+		radius = rad;
+	}
+	
 }
 	

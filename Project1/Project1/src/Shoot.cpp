@@ -4,6 +4,7 @@
 ////////////////////////CONSTRUCTOR////////////////////////////
 Shoot::Shoot() {
 	radius = 0.5f;
+	aceleration.y = 2.0f;
 }
 
 ///////////////////////////MÉTODOS///////////////////////////
@@ -25,7 +26,9 @@ void Shoot::Move(float t) {
 }
 
 void Shoot::SetRadius(float rad) {
-	radius = rad;
+	if (rad > 0) {
+		radius = rad;
+	}
 }
 
 void Shoot::SetPos(float x, float y) {
