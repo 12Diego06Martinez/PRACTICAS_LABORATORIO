@@ -8,6 +8,8 @@ public:
 	//virtual ~Shoot();
 	void Draw();
 	void Move(float t);
+	void SetRadius(float rad); //para el futuro
+	void SetPos(float x, float y); //idem
 private:
 	float radius;
 	Vector2D position;

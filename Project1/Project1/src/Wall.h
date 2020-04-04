@@ -8,6 +8,8 @@ public:
 	//virtual ~Wall();
 	void Draw();
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
+	void SetLimit1(float x, float y);
+	void SetLimit2(float x, float y);
 private:
 	unsigned char red;
 	unsigned char green;

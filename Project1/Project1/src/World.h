@@ -12,7 +12,6 @@ public:
 	World();
 	//virtual ~World();
 	void Draw();
-	void Initialize();
 	void Move();
 private:
 	float x_eye;

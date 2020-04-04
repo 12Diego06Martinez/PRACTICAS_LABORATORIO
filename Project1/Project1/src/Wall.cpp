@@ -4,6 +4,8 @@
 ////////////////////////CONSTRUCTOR////////////////////////////
 Wall::Wall() {
 	red = green = blue = 255; //color por defecto=blanco
+	//limit1.x = limit1.y = 10;
+	//limit2.x = limit2.y = 5;
 }
 
 ///////////////////////////MÉTODOS///////////////////////////
@@ -24,4 +26,14 @@ void Wall::SetColor(unsigned char r, unsigned char g, unsigned char b) {
 	red = r;
 	green = g;
 	blue = b;
+}
+
+void Wall::SetLimit1(float x, float y) {
+	limit1.x = x;
+	limit1.y = y;
+}
+
+void Wall::SetLimit2(float x, float y) {
+	limit2.x = x;
+	limit2.y = y;
 }
