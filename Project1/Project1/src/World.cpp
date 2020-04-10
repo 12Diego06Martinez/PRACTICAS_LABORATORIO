@@ -45,7 +45,5 @@ void World::Initialize() {
 	shoot.SetPos(5, 5);
 	//Inicialización plataforma
 	platform.SetLimits(-5.0f, 9.0f, 5.0f, 9.0f);
-	//Inicialización caja
-	box.SetBox();
 }
 

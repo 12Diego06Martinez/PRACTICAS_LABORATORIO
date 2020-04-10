@@ -15,6 +15,14 @@ void Shoot::Draw() {
 	glTranslatef(position.x, position.y, 0);
 	glutSolidSphere(radius, 20, 20);
 	glPopMatrix();
+	//Dibujamos la estela como una línea recta
+	glDisable(GL_LIGHTING);
+	glColor3ub(0, 255, 0);
+	glBegin(GL_LINES);
+	glVertex2f(origin.x, origin.y);
+	glVertex2f(position.x, position.y);
+	glEnd();
+	glEnable(GL_LIGHTING);
 }
 
 void Shoot::Move(float t) {
@@ -32,6 +40,11 @@ void Shoot::SetRadius(float rad) {
 }
 
 void Shoot::SetPos(float x, float y) {
-	position.x = x;
-	position.y = y;
+	position.x = origin.x = x;
+	position.y = origin.y =y;
 }
+
+/*void Shoot::SetOrigin(float x, float y) {
+	origin.x = x;
+	origin.y = y;
+}*/

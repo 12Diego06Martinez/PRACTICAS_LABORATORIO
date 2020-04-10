@@ -7,7 +7,6 @@ public:
 	Box();
 	//virtual ~Box();
 	void Draw();
-	void SetBox();
 private:
 	Wall roof;
 	Wall floor;
