@@ -9,6 +9,7 @@ public:
 	void Draw();
 	void Move(float t);
 	void SetPos(float x, float y);
+	void SetSpeed(float x, float y);
 private:
 	float height;
 	Vector2D position;

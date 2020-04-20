@@ -47,3 +47,14 @@ void World::Initialize() {
 	platform.SetLimits(-5.0f, 9.0f, 5.0f, 9.0f);
 }
 
+void World::SpecialKey(unsigned char key){
+	switch(key) {
+		case GLUT_KEY_LEFT:
+			human.SetSpeed(-5.0f, 0.0f);
+			break;
+		case GLUT_KEY_RIGHT:
+			human.SetSpeed(5.0f, 0.0f);
+			break;
+	}
+}
+

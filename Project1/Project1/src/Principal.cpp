@@ -12,7 +12,7 @@ World miMundo;
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-
+void OnSpecialKeyboardDown(int key, int x, int y);//para las teclas de cursor
 
 //--------------MAIN--------------
 int main(int argc, char* argv[])
@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//cada 25ms llama a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
+	glutSpecialFunc(OnSpecialKeyboardDown);
 
 	//Llamada a métodos
 	miMundo.Initialize();
@@ -57,8 +58,7 @@ int main(int argc, char* argv[])
 
 }*/
 
-void OnDraw(void)
-{
+void OnDraw(void){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Borrado de la pantalla
 
 	//Definimos el punto de vista
@@ -73,17 +73,23 @@ void OnDraw(void)
 	glutSwapBuffers();
 }
 
-void OnKeyboardDown(unsigned char key, int x_t, int y_t)
-{
+void OnKeyboardDown(unsigned char key, int x_t, int y_t){
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	//miMundo.Key(key);
+	//miMundo.SpecialKey(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
 }
 
-void OnTimer(int value)
-{
+void OnSpecialKeyboardDown(int key, int x_t, int y_t){
+	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
+	miMundo.SpecialKey(key);
+
+	//NO BORRAR ESTAS LINEAS
+	glutPostRedisplay();
+}
+
+void OnTimer(int value){
 	//LLAMAR AL METODO MOVE DE LA CLASE MUNDO (actualiza mundo y esferas)
 	miMundo.Move();
 	

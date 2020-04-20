@@ -26,3 +26,8 @@ void Human::SetPos(float x, float y) {
 	position.x = x;
 	position.y = y;
 }
+
+void Human::SetSpeed(float x, float y) {
+	speed.x = x;
+	speed.y = y;
+}
