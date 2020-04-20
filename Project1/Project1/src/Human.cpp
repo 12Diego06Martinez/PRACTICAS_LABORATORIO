@@ -18,10 +18,8 @@ void Human::Draw() {
 
 void Human::Move(float t) {
 	//Ecuaciones del movimiento
-	position.x = position.x + speed.x * t + 0.5f * aceleration.x * t * t;
-	position.y = position.y + speed.y * t + 0.5f * aceleration.y * t * t;
-	speed.x = speed.x + aceleration.x * t;
-	speed.y = speed.y + aceleration.y * t;
+	position = position + speed * t + aceleration * (0.5f * t * t);
+	speed = speed + aceleration * t;
 }
 
 void Human::SetPos(float x, float y) {
