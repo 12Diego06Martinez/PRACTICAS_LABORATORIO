@@ -10,6 +10,7 @@ public:
 	void Move(float t);
 	void SetPos(float x, float y);
 	void SetSpeed(float x, float y);
+	friend class Interaction;
 private:
 	float height;
 	Vector2D position;

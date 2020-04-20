@@ -7,6 +7,7 @@ public:
 	Box();
 	//virtual ~Box();
 	void Draw();
+	friend class Interaction;
 private:
 	Wall roof;
 	Wall floor;

@@ -1,4 +1,5 @@
 #include "World.h"
+#include "Interaction.h"
 #include "glut.h"
 
 //////////////////////////////CONSTRUCTOR///////////////////
@@ -27,6 +28,7 @@ void World::Move() {
 	bonus.Move(0.025f);
 	human.Move(0.025f);
 	shoot.Move(0.025f);
+	Interaction::Rebote(human, box);
 }
 
 void World::Initialize() {
