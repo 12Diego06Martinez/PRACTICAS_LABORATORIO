@@ -31,8 +31,9 @@ void World::Move() {
 	human.Move(0.025f);
 	shoot.Move(0.025f);
 	Interaction::Rebote(human, box);
-	//Interaction::Rebote(sphere, box);
-	//Interaction::Rebote(sphere1, platform);
+	Interaction::Rebote(sphere1, box);
+	Interaction::Rebote(sphere2, box);
+	Interaction::Rebote(sphere1, platform);
 	Interaction::Rebote(sphere1, sphere2);
 }
 

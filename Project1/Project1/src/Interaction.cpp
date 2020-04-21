@@ -28,9 +28,11 @@ bool Interaction::Rebote(Sphere& s, Wall w) {
 	return false;
 }
 
-bool Interaction::Rebote(Sphere& s, Box b) {
-	//--TODO
-	return false;
+void Interaction::Rebote(Sphere& s, Box b) {
+	Rebote(s, b.floor);
+	Rebote(s, b.roof);
+	Rebote(s, b.right_wall);
+	Rebote(s, b.left_wall);
 }
 
 bool Interaction::Rebote(Sphere& sphere1, Sphere& sphere2) {
