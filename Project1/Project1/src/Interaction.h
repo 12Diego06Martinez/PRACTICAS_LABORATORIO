@@ -14,4 +14,5 @@ public:
 	static void Rebote(Human  &h, Box b);
 	static bool Rebote(Sphere &s, Wall w);
 	static bool Rebote(Sphere& s, Box b);
+	static bool Rebote(Sphere& sphere1, Sphere& sphere2);
 };

@@ -32,7 +32,8 @@ void World::Move() {
 	shoot.Move(0.025f);
 	Interaction::Rebote(human, box);
 	//Interaction::Rebote(sphere, box);
-	Interaction::Rebote(sphere1, platform);
+	//Interaction::Rebote(sphere1, platform);
+	Interaction::Rebote(sphere1, sphere2);
 }
 
 void World::Initialize() {
@@ -47,7 +48,7 @@ void World::Initialize() {
 	sphere1.SetSpeed(5, 15);
 	//Inicialización esfera 2
 	sphere2.SetColor(0, 100, 100);
-	sphere2.SetPos(-2, 4);
+	sphere2.SetPos(8, 2);
 	sphere2.SetRadius(2);  
 	sphere2.SetSpeed(-5, 15);
 	//Inicialización bonus
