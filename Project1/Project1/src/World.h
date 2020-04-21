@@ -23,7 +23,8 @@ private:
 	Box box;
 	Human human;
 	Shoot shoot;
-	Sphere sphere;
+	Sphere sphere1;
+	Sphere sphere2;
 	Wall platform;
 };
 

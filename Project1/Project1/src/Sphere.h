@@ -11,6 +11,8 @@ public:
 	void SetPos(float x, float y);
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 	void SetRadius(float rad);
+	void SetSpeed(float x, float y);
+	friend class Interaction;
 private:
 	float radius;
 	unsigned char red;

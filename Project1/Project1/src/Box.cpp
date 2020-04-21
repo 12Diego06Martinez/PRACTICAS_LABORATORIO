@@ -25,3 +25,4 @@ void Box::Draw() {
 	right_wall.Draw();
 }
 
+

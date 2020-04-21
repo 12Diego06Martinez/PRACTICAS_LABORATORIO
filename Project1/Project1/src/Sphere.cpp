@@ -39,4 +39,8 @@ void Sphere::SetRadius(float rad) {
 		radius = rad;
 	}
 }
-	
+
+void Sphere::SetSpeed(float x, float y) {
+	speed.x = x;
+	speed.y = y;
+}

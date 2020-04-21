@@ -15,7 +15,8 @@ void World::Draw() {
 		0.0, 1.0, 0.0); //orientación del mundo hacia arriba
 
 	//Dibujamos objetos
-	sphere.Draw();
+	sphere1.Draw();
+	sphere2.Draw();
 	bonus.Draw();
 	human.Draw();
 	shoot.Draw();
@@ -24,11 +25,14 @@ void World::Draw() {
 }
 
 void World::Move() {
-	sphere.Move(0.025f);
+	sphere1.Move(0.025f);
+	sphere2.Move(0.025f);
 	bonus.Move(0.025f);
 	human.Move(0.025f);
 	shoot.Move(0.025f);
 	Interaction::Rebote(human, box);
+	//Interaction::Rebote(sphere, box);
+	Interaction::Rebote(sphere1, platform);
 }
 
 void World::Initialize() {
@@ -36,10 +40,16 @@ void World::Initialize() {
 	x_eye = 0;
 	y_eye = 7.5;
 	z_eye = 30;
-	//Inicialización esfera
-	sphere.SetColor(255, 0, 0);
-	sphere.SetPos(2, 4);
-	sphere.SetRadius(1.5);
+	//Inicialización esfera 1
+	sphere1.SetColor(255, 0, 0);
+	sphere1.SetPos(2, 4);
+	sphere1.SetRadius(1.5);
+	sphere1.SetSpeed(5, 15);
+	//Inicialización esfera 2
+	sphere2.SetColor(0, 100, 100);
+	sphere2.SetPos(-2, 4);
+	sphere2.SetRadius(2);  
+	sphere2.SetSpeed(-5, 15);
 	//Inicialización bonus
 	bonus.SetPos(5, 10);
 	bonus.SetSide(2.5);

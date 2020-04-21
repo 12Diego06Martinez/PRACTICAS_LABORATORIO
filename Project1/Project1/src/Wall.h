@@ -9,6 +9,7 @@ public:
 	void Draw();
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 	void SetLimits(float x1, float y1, float x2, float y2);
+	float Distance(Vector2D point, Vector2D* direction = 0);
 	friend class Interaction;
 private:
 	unsigned char red;
