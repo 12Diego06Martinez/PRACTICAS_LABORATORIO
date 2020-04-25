@@ -37,6 +37,7 @@ void World::Move() {
 	Interaction::Rebote(sphere2, box);
 	Interaction::Rebote(sphere1, platform);
 	Interaction::Rebote(sphere1, sphere2);
+	spheres.Rebote(box);
 }
 
 void World::Initialize() {
@@ -63,10 +64,10 @@ void World::Initialize() {
 	platform.SetLimits(-5.0f, 9.0f, 5.0f, 9.0f);
 	//Inicialización lista de esferas
 	for (int i = 0; i < 6; i++) {
-		Sphere* aux = new Sphere;
-		aux->SetPos(i, 1 + i);
+		Sphere* aux = new Sphere(0.75 + i * 0.25, i, 1 + i, i, i);
+		/*aux->SetPos(i, 1 + i);
 		aux->SetSpeed(i, i);
-		aux->SetRadius(0.75 + i * 0.25);
+		aux->SetRadius(0.75 + i * 0.25);*/
 		spheres.Add(aux);
 	}
 }

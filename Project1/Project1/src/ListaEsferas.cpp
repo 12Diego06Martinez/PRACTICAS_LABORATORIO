@@ -31,3 +31,9 @@ void ListaEsferas::Move(float t) {
 		lista[num]->Move(t);
 	}
 }
+
+void ListaEsferas::Rebote(Box box) {
+	for (int i = 0; i < MAX_NUM; i++) {
+		Interaction::Rebote(*(lista[i]), box);
+	}
+}

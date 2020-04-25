@@ -4,7 +4,6 @@
 #include "glut.h"
 #include "World.h"
 
-
 World miMundo;
 
 
