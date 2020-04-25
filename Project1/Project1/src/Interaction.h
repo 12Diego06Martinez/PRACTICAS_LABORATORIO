@@ -15,4 +15,5 @@ public:
 	static bool Rebote(Sphere &s, Wall w);
 	static void Rebote(Sphere& s, Box b);
 	static bool Rebote(Sphere& sphere1, Sphere& sphere2);
+	static bool Colision(Sphere s, Human h);
 };

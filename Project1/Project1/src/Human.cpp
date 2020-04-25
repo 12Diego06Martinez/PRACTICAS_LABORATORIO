@@ -31,3 +31,11 @@ void Human::SetSpeed(float x, float y) {
 	speed.x = x;
 	speed.y = y;
 }
+
+Vector2D Human::GetPos() {
+	return position;
+}
+
+float Human::GetHeight() {
+	return height;
+}

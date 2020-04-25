@@ -15,6 +15,10 @@ public:
 	void Rebote(Box box);
 	void Rebote(Wall wall);
 	void Rebote();
+	void Destroy();
+	void Delete(int index); //elimina esfera en la posicion indicada
+	void Delete(Sphere* esphere); //elimina la esfera apuntada por el puntero
+	Sphere *Colision(Human &h);
 private:
 	Sphere* lista[MAX_NUM];
 	int num;

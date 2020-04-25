@@ -10,7 +10,7 @@ class World
 {
 public:
 	World();
-	//virtual ~World();
+	virtual ~World();
 	void Draw();
 	void Move();
 	void Initialize();

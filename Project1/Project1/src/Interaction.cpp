@@ -109,3 +109,14 @@ bool Interaction::Rebote(Sphere& sphere1, Sphere& sphere2) {
 	}
 	return false;
 }
+
+bool Interaction::Colision(Sphere s, Human h) {
+	Vector2D pos = h.GetPos();//pos base hombre
+	pos.y += h.GetHeight()/2.0f;//pos centro hombre
+
+	float dist = (s.position - pos).Modulo();
+	if (dist < s.radius)
+		return true;
+
+	return false;
+}

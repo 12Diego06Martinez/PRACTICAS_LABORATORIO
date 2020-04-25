@@ -7,6 +7,9 @@ World::World() {
 	
 }
 
+World::~World() {
+	spheres.Destroy();
+}
 /////////////////////////////MÉTODOS////////////////////////
 void World::Draw() {
 	//Establecemos punto de vista
@@ -32,13 +35,19 @@ void World::Move() {
 	human.Move(0.025f);
 	shoot.Move(0.025f);
 	spheres.Move(0.025f);
+
+	Sphere* aux = spheres.Colision(human);
+	if (aux != 0)//detecta choque
+		spheres.Delete(aux);
+		
+	//Interacción entre los objetos
 	Interaction::Rebote(human, box);
 	Interaction::Rebote(sphere1, box);
 	Interaction::Rebote(sphere2, box);
 	Interaction::Rebote(sphere1, platform);
 	Interaction::Rebote(sphere1, sphere2);
-	//spheres.Rebote(box);
-	//spheres.Rebote(platform);
+	spheres.Rebote(box);
+	spheres.Rebote(platform);
 }
 
 void World::Initialize() {
@@ -46,16 +55,6 @@ void World::Initialize() {
 	x_eye = 0;
 	y_eye = 7.5;
 	z_eye = 30;
-	//Inicialización esfera 1
-	sphere1.SetColor(255, 0, 0);
-	sphere1.SetPos(2, 4);
-	sphere1.SetRadius(1.5);
-	sphere1.SetSpeed(5, 15);
-	//Inicialización esfera 2
-	sphere2.SetColor(0, 100, 100);
-	sphere2.SetPos(8, 2);
-	sphere2.SetRadius(2);  
-	sphere2.SetSpeed(-5, 15);
 	//Inicialización bonus
 	bonus.SetPos(5, 10);
 	bonus.SetSide(2.5);
@@ -63,7 +62,15 @@ void World::Initialize() {
 	shoot.SetPos(5, 5);
 	//Inicialización plataforma
 	platform.SetLimits(-5.0f, 9.0f, 5.0f, 9.0f);
-	//Inicialización lista de esferas
+	//Inicialización de esferas
+	Sphere* sphere1 = new Sphere(1.5, 2, 4, 5, 15);
+	sphere1->SetColor(255, 0, 0);
+	spheres.Add(sphere1);
+
+	Sphere* sphere2 = new Sphere(2, 8, 2, -5, 15);
+	sphere2->SetColor(100, 100, 100);
+	spheres.Add(sphere2);
+
 	for (int i = 0; i < 6; i++) {
 		Sphere* aux = new Sphere(0.75 + i * 0.25, i, 1 + i, i, i);
 		/*Sphere* aux = new Sphere();
