@@ -8,27 +8,30 @@ ListaEsferas::ListaEsferas() {
 	}
 }
 
+ListaEsferas::~ListaEsferas() {
+
+}
+
 /////////////////////////////////MÉTODOS////////////////////
 bool ListaEsferas::Add(Sphere* e) {
 	if (num < MAX_NUM) {
-		lista[num] = e;
-		num++;
-		return true;
+		lista[num++] = e;
 	}
 	else {
 		return false;
 	}
+	return true;
 }
 
 void ListaEsferas::Draw() {
 	for (int i= 0; i < num; i++) {
-		lista[num]->Draw();
+		lista[i]->Draw();
 	}
 }
 
 void ListaEsferas::Move(float t) {
 	for (int i = 0; i < num; i++) {
-		lista[num]->Move(t);
+		lista[i]->Move(t);
 	}
 }
 
@@ -36,4 +39,14 @@ void ListaEsferas::Rebote(Box box) {
 	for (int i = 0; i < MAX_NUM; i++) {
 		Interaction::Rebote(*(lista[i]), box);
 	}
+}
+
+void ListaEsferas::Rebote(Wall wall) {
+	for (int i = 0; i < MAX_NUM; i++) {
+		Interaction::Rebote(*(lista[i]), wall);
+	}
+}
+
+void ListaEsferas::Rebote() {
+
 }
