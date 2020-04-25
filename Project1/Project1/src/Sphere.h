@@ -5,7 +5,8 @@ class Sphere
 {
 public:
 	Sphere();
-	//virtual ~Sphere();
+	Sphere(float rad, float x = 0.0f, float y = 0.0f, float vx = 0.0f, float vy = 0.0f);
+	virtual ~Sphere();
 	void Draw();
 	void Move(float t);
 	void SetPos(float x, float y);

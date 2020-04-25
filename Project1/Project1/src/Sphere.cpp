@@ -8,6 +8,21 @@ Sphere::Sphere() {
 	aceleration.y = -9.8f;
 }
 
+Sphere::Sphere(float rad, float x, float y, float vx, float vy) {
+	radius = rad;
+	position.x = x;
+	position.y = y;
+	speed.x = vx;
+	speed.y = vy;
+	red = green = 255;
+	blue = 100;
+	aceleration.y = -9.8f;
+}
+
+Sphere::~Sphere() {
+
+}
+
 ///////////////////////MÉTODOS///////////////////////
 void Sphere::Draw() {
 	//Dibujamos esfera
