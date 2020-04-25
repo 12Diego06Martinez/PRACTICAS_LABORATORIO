@@ -22,6 +22,7 @@ void World::Draw() {
 	shoot.Draw();
 	platform.Draw();
 	box.Draw();
+	spheres.Draw();
 }
 
 void World::Move() {
@@ -30,6 +31,7 @@ void World::Move() {
 	bonus.Move(0.025f);
 	human.Move(0.025f);
 	shoot.Move(0.025f);
+	spheres.Move(0.025f);
 	Interaction::Rebote(human, box);
 	Interaction::Rebote(sphere1, box);
 	Interaction::Rebote(sphere2, box);
@@ -59,6 +61,14 @@ void World::Initialize() {
 	shoot.SetPos(5, 5);
 	//Inicialización plataforma
 	platform.SetLimits(-5.0f, 9.0f, 5.0f, 9.0f);
+	//Inicialización lista de esferas
+	for (int i = 0; i < 6; i++) {
+		Sphere* aux = new Sphere;
+		aux->SetPos(i, 1 + i);
+		aux->SetSpeed(i, i);
+		aux->SetRadius(0.75 + i * 0.25);
+		spheres.Add(aux);
+	}
 }
 
 void World::SpecialKey(unsigned char key){

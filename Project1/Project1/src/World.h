@@ -4,7 +4,7 @@
 #include "Human.h"
 #include "Shoot.h"
 #include "Sphere.h"
-//#include "Wall.h"
+#include "ListaEsferas.h"
 
 class World
 {
@@ -26,5 +26,6 @@ private:
 	Sphere sphere1;
 	Sphere sphere2;
 	Wall platform;
+	ListaEsferas spheres;
 };
 

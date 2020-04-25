@@ -23,6 +23,7 @@
     <ClInclude Include="src\Box.h" />
     <ClInclude Include="src\Human.h" />
     <ClInclude Include="src\Interaction.h" />
+    <ClInclude Include="src\ListaEsferas.h" />
     <ClInclude Include="src\Shoot.h" />
     <ClInclude Include="src\Sphere.h" />
     <ClInclude Include="src\Vector2D.h" />
@@ -34,6 +35,7 @@
     <ClCompile Include="src\Box.cpp" />
     <ClCompile Include="src\Human.cpp" />
     <ClCompile Include="src\Interaction.cpp" />
+    <ClCompile Include="src\ListaEsferas.cpp" />
     <ClCompile Include="src\Principal.cpp" />
     <ClCompile Include="src\Shoot.cpp" />
     <ClCompile Include="src\Sphere.cpp" />
