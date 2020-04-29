@@ -21,10 +21,10 @@ private:
 	float z_eye;
 	Bonus bonus;
 	Box box;
-	Human human;
-	Shoot shoot;
 	Sphere sphere1;
 	Sphere sphere2;
+	Human human;
+	Shoot shoot;
 	Wall platform;
 	ListaEsferas spheres;
 };

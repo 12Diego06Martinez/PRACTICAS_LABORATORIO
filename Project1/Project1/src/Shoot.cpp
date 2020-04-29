@@ -41,3 +41,8 @@ void Shoot::SetPos(float x, float y) {
 	position.x = origin.x = x;
 	position.y = origin.y =y;
 }
+
+void Shoot::SetSpeed(float vx, float vy) {
+	speed.x = vx;
+	speed.y = vy;
+}

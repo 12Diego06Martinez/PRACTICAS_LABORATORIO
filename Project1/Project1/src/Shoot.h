@@ -10,7 +10,9 @@ public:
 	void Move(float t);
 	void SetRadius(float rad); //para el futuro
 	void SetPos(float x, float y);
-	//void SetOrigin(float x, float y);
+	void SetSpeed(float vx, float vy);
+	float GetRadius() { return radius; }
+	Vector2D GetPos() { return position; }
 private:
 	float radius;
 	Vector2D origin;

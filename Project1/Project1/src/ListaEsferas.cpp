@@ -15,7 +15,8 @@ ListaEsferas::~ListaEsferas() {
 /////////////////////////////////MÉTODOS////////////////////
 bool ListaEsferas::Add(Sphere* e) {
 	if (num < MAX_NUM) {
-		lista[num++] = e;
+		lista[num] = e;	
+		num++;
 	}
 	else {
 		return false;
@@ -93,4 +94,14 @@ Sphere* ListaEsferas::Colision(Human& h) {
 			return lista[i];
 	}
 	return 0;
+}
+
+Sphere* ListaEsferas::operator[](int pos) {
+	if (pos >= num)//si me paso, devuelvo la ultima   
+		pos = num-1; 
+
+	if (pos < 0) //si el indice es negativo, devuelvo la primera   
+		pos=0;    
+	
+	return lista[pos];
 }

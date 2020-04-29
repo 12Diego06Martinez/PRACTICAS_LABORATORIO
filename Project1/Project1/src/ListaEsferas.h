@@ -18,7 +18,9 @@ public:
 	void Destroy();
 	void Delete(int index); //elimina esfera en la posicion indicada
 	void Delete(Sphere* esphere); //elimina la esfera apuntada por el puntero
-	Sphere *Colision(Human &h);
+	Sphere* Colision(Human &h);
+	Sphere* operator [](int pos);
+	int GetNum() { return num; }
 private:
 	Sphere* lista[MAX_NUM];
 	int num;

@@ -18,8 +18,6 @@ void World::Draw() {
 		0.0, 1.0, 0.0); //orientación del mundo hacia arriba
 
 	//Dibujamos objetos
-	//sphere1.Draw();
-	//sphere2.Draw();
 	bonus.Draw();
 	human.Draw();
 	shoot.Draw();
@@ -29,8 +27,6 @@ void World::Draw() {
 }
 
 void World::Move() {
-	//sphere1.Move(0.025f);
-	//sphere2.Move(0.025f);
 	bonus.Move(0.025f);
 	human.Move(0.025f);
 	shoot.Move(0.025f);
