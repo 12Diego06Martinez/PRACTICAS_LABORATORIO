@@ -8,7 +8,7 @@ public:
 	//virtual ~Shoot();
 	void Draw();
 	void Move(float t);
-	void SetRadius(float rad); //para el futuro
+	void SetRadius(float rad); //altura
 	void SetPos(float x, float y);
 	void SetSpeed(float vx, float vy);
 	float GetRadius() { return radius; }

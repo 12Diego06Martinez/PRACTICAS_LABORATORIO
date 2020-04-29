@@ -1,6 +1,7 @@
 #pragma once
 #include "Shoot.h"
 #include "Box.h"
+#include "Interaction.h"
 
 #define MAX_SHOOT 10	
 
@@ -12,8 +13,8 @@ public:
 	bool Add(Shoot* s);
 	void Destroy();
 	void Move(float t);
-	void Collision(Wall w);
-	void Collision(Box b);
+	void Colision(Wall w);
+	void Colision(Box b);
 private:
 	Shoot* lista[MAX_SHOOT];
 	int num;

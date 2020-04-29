@@ -49,7 +49,6 @@ void ListaEsferas::Rebote(Wall wall) {
 }
 
 void ListaEsferas::Rebote() {
-	//TODO--
 	for (int i = 0; i < num; i++) {
 		for (int j = 0; j < num; j++) {
 			Interaction::Rebote(*(lista[i]), *(lista[j]));

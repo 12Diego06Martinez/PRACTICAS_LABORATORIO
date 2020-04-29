@@ -23,4 +23,23 @@ bool ListaDisparos::Add(Shoot* s) {
 	return true;
 }
 
+void ListaDisparos::Move(float t) {
+	for (int i = 0; i < num; i++) {
+		lista[i]->Move(t);
+	}
+}
 
+void ListaDisparos::Destroy() {
+	for (int i = 0; i < num; i++) {
+		delete lista[i];
+	}
+	num = 0;
+}
+
+void ListaDisparos::Colision(Wall w) {
+//-TODO
+}
+
+void ListaDisparos::Colision(Box b) {
+	//--TODO
+}

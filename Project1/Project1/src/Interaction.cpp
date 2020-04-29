@@ -120,3 +120,18 @@ bool Interaction::Colision(Sphere s, Human h) {
 
 	return false;
 }
+
+bool Interaction::Colision(Shoot s, Wall w) {
+	Vector2D pos;
+	float dif = w.Distance(s.GetPos(), &pos) - s.GetRadius();
+	if (dif <= 0) {
+		return true;
+	}
+	else
+		return false;
+}
+
+void Interaction::Colision(Shoot s, Box b) {
+	Colision(s, b.roof);
+}
+
