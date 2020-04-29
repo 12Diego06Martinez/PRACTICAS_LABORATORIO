@@ -9,6 +9,7 @@ World::World() {
 
 World::~World() {
 	spheres.Destroy();
+	shoots.Destroy();
 }
 /////////////////////////////MÉTODOS////////////////////////
 void World::Draw() {
@@ -20,31 +21,33 @@ void World::Draw() {
 	//Dibujamos objetos
 	bonus.Draw();
 	human.Draw();
-	shoot.Draw();
 	platform.Draw();
 	box.Draw();
 	spheres.Draw();
+	shoots.Draw();
 }
 
 void World::Move() {
 	bonus.Move(0.025f);
 	human.Move(0.025f);
-	shoot.Move(0.025f);
 	spheres.Move(0.025f);
+	shoots.Move(0.025f);
 
 	Sphere* aux = spheres.Colision(human);
 	if (aux != 0)//detecta choque
 		spheres.Delete(aux);
 		
 	//Interacción entre los objetos
-	/*Interaction::Rebote(human, box);
-	Interaction::Rebote(sphere1, box);
+	Interaction::Rebote(human, box);
+	/*Interaction::Rebote(sphere1, box);
 	Interaction::Rebote(sphere2, box);
 	Interaction::Rebote(sphere1, platform);
 	Interaction::Rebote(sphere1, sphere2);*/
 	spheres.Rebote(box);
 	spheres.Rebote(platform);
 	spheres.Rebote();
+	shoots.Colision(platform);
+	shoots.Colision(box);
 }
 
 void World::Initialize() {
@@ -55,8 +58,6 @@ void World::Initialize() {
 	//Inicialización bonus
 	bonus.SetPos(5, 10);
 	bonus.SetSide(2.5);
-	//Inicialización disparo
-	shoot.SetPos(5, 5);
 	//Inicialización plataforma
 	platform.SetLimits(-5.0f, 9.0f, 5.0f, 9.0f);
 	//Inicialización de esferas
@@ -72,6 +73,7 @@ void World::Initialize() {
 		Sphere* aux = new Sphere(0.75 + i * 0.25, i, 1 + i, i, i);
 		spheres.Add(aux);
 	}
+
 }
 
 void World::SpecialKey(unsigned char key){
@@ -82,6 +84,19 @@ void World::SpecialKey(unsigned char key){
 		case GLUT_KEY_RIGHT:
 			human.SetSpeed(5.0f, 0.0f);
 			break;
+	}
+}
+
+void World::Key(unsigned char key) {
+	switch (key) {
+		case ' ':
+		{
+			Shoot* s = new Shoot();
+			Vector2D pos = human.GetPos();
+			s->SetPos(pos.x, pos.y);
+			shoots.Add(s);
+			break;
+		}
 	}
 }
 

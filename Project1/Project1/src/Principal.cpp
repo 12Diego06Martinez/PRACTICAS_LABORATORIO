@@ -74,7 +74,7 @@ void OnDraw(void){
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t){
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	//miMundo.SpecialKey(key);
+	miMundo.Key(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();

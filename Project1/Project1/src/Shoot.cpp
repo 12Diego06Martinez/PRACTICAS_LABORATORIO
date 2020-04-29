@@ -7,6 +7,17 @@ Shoot::Shoot() {
 	aceleration.y = 2.0f;
 }
 
+Shoot::Shoot(float rad, float x, float y, float vx, float vy) {
+	radius = rad;
+	position.x = x;
+	position.y = y;
+	speed.x = vx;
+	speed.y = vy;
+}
+
+Shoot::~Shoot() {
+
+}
 ///////////////////////////MÉTODOS///////////////////////////
 void Shoot::Draw() {
 	//Dibujamos el disparo como una esfera
@@ -45,4 +56,9 @@ void Shoot::SetPos(float x, float y) {
 void Shoot::SetSpeed(float vx, float vy) {
 	speed.x = vx;
 	speed.y = vy;
+}
+
+void Shoot::SetAcel(float ax, float ay) {
+	aceleration.x = ax;
+	aceleration.y = ay;
 }

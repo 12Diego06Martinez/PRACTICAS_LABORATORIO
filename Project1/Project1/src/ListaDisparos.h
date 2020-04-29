@@ -11,6 +11,7 @@ public:
 	ListaDisparos();
 	~ListaDisparos();
 	bool Add(Shoot* s);
+	void Draw();
 	void Destroy();
 	void Move(float t);
 	void Colision(Wall w);

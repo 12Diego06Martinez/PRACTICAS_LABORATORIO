@@ -29,6 +29,12 @@ void ListaDisparos::Move(float t) {
 	}
 }
 
+void ListaDisparos::Draw() {
+	for (int i = 0; i < num; i++) {
+		lista[i]->Draw();
+	}
+}
+
 void ListaDisparos::Destroy() {
 	for (int i = 0; i < num; i++) {
 		delete lista[i];
@@ -37,9 +43,19 @@ void ListaDisparos::Destroy() {
 }
 
 void ListaDisparos::Colision(Wall w) {
-//-TODO
+	for (int i = 0; i < num; i++) {
+		if (Interaction::Colision(*(lista[i]), w)) {
+			lista[i]->SetSpeed(0, 0);
+			lista[i]->SetAcel(0, 0);
+		}
+	}
 }
 
 void ListaDisparos::Colision(Box b) {
-	//--TODO
+	for (int i = 0; i < num; i++) {
+		if (Interaction::Colision(*(lista[i]), b)) {
+			lista[i]->SetSpeed(0, 0);
+			lista[i]->SetAcel(0, 0);
+		}
+	}
 }
