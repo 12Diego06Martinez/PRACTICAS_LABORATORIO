@@ -18,8 +18,8 @@ void World::Draw() {
 		0.0, 1.0, 0.0); //orientación del mundo hacia arriba
 
 	//Dibujamos objetos
-	sphere1.Draw();
-	sphere2.Draw();
+	//sphere1.Draw();
+	//sphere2.Draw();
 	bonus.Draw();
 	human.Draw();
 	shoot.Draw();
@@ -29,8 +29,8 @@ void World::Draw() {
 }
 
 void World::Move() {
-	sphere1.Move(0.025f);
-	sphere2.Move(0.025f);
+	//sphere1.Move(0.025f);
+	//sphere2.Move(0.025f);
 	bonus.Move(0.025f);
 	human.Move(0.025f);
 	shoot.Move(0.025f);
@@ -41,13 +41,14 @@ void World::Move() {
 		spheres.Delete(aux);
 		
 	//Interacción entre los objetos
-	Interaction::Rebote(human, box);
+	/*Interaction::Rebote(human, box);
 	Interaction::Rebote(sphere1, box);
 	Interaction::Rebote(sphere2, box);
 	Interaction::Rebote(sphere1, platform);
-	Interaction::Rebote(sphere1, sphere2);
+	Interaction::Rebote(sphere1, sphere2);*/
 	spheres.Rebote(box);
 	spheres.Rebote(platform);
+	spheres.Rebote();
 }
 
 void World::Initialize() {
@@ -73,10 +74,6 @@ void World::Initialize() {
 
 	for (int i = 0; i < 6; i++) {
 		Sphere* aux = new Sphere(0.75 + i * 0.25, i, 1 + i, i, i);
-		/*Sphere* aux = new Sphere();
-		aux->SetPos(i, 1 + i);
-		aux->SetSpeed(i, i);
-		aux->SetRadius(0.75 + i * 0.25);*/
 		spheres.Add(aux);
 	}
 }
