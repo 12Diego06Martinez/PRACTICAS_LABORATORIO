@@ -34,20 +34,15 @@ void World::Move() {
 	spheres.Move(0.025f);
 	shoots.Move(0.025f);
 
-	Sphere* aux = spheres.Colision(human);
+	Sphere* aux = InteraccionListas::Colision(spheres,human);
 	if (aux != 0)//detecta choque
 		spheres.Delete(aux);
 		
 	//Interacción entre los objetos
 	Interaction::Rebote(human, box);
-	/*Interaction::Rebote(sphere1, box);
-	Interaction::Rebote(sphere2, box);
-	Interaction::Rebote(sphere1, platform);
-	Interaction::Rebote(sphere1, sphere2);*/
 	InteraccionListas::Rebote(spheres, box);
 	InteraccionListas::Rebote(spheres, platform);
 	InteraccionListas::Rebote(spheres);
-	//spheres.Rebote();
 	shoots.Colision(platform);
 	shoots.Colision(box);
 }

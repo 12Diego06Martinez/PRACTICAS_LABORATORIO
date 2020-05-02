@@ -35,14 +35,6 @@ void ListaEsferas::Move(float t) {
 	}
 }
 
-/*void ListaEsferas::Rebote() {
-	for (int i = 0; i < num; i++) {
-		for (int j = 0; j < num; j++) {
-			Interaction::Rebote(*(lista[i]), *(lista[j]));
-		}
-	}
-}*/
-
 void ListaEsferas::Destroy() {
 	for (int i = 0; i < num; i++) {
 		delete lista[i];
@@ -73,13 +65,13 @@ void ListaEsferas::Delete(Sphere* sphere) {
 	}
 }
 
-Sphere* ListaEsferas::Colision(Human& h) {
+/*Sphere* ListaEsferas::Colision(Human& h) {
 	for (int i = 0; i < num; i++) {
 		if (Interaction::Colision(*(lista[i]), h))
 			return lista[i];
 	}
 	return 0;
-}
+}*/
 
 Sphere* ListaEsferas::operator[](int pos) {
 	if (pos >= num)//si me paso, devuelvo la ultima   
