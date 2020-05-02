@@ -15,3 +15,9 @@ void InteraccionListas::Rebote(ListaEsferas& s, Box b) {
 		Interaction::Rebote(*(s[i]), b);
 	}
 }
+
+void InteraccionListas::Rebote(ListaEsferas& s, Wall w) {
+	for (int i = 0; i < s.GetNum(); i++) {
+		Interaction::Rebote(*(s[i]), w);
+	}
+}

@@ -13,8 +13,7 @@ public:
 	void Draw();
 	void Move(float t);
 	int GetNum() { return num; }
-	//void Rebote(Box box);
-	void Rebote(Wall wall);
+	//void Rebote(Wall wall);
 	void Rebote();
 	void Destroy();
 	void Delete(int index); //elimina esfera en la posicion indicada

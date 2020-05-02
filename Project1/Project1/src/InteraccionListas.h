@@ -9,5 +9,6 @@ public:
 	InteraccionListas();
 	~InteraccionListas();
 	static void Rebote(ListaEsferas& s, Box b);
+	static void Rebote(ListaEsferas& s, Wall w);
 };
 

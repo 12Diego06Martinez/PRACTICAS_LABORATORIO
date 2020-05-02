@@ -26,7 +26,6 @@ private:
 	Sphere sphere1;
 	Sphere sphere2;
 	Human human;
-	//Shoot shoot;
 	Wall platform;
 	ListaEsferas spheres;
 	ListaDisparos shoots;

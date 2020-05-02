@@ -35,17 +35,11 @@ void ListaEsferas::Move(float t) {
 	}
 }
 
-/*void ListaEsferas::Rebote(Box box) {
-	for (int i = 0; i < num; i++) {
-		Interaction::Rebote(*(lista[i]), box);
-	}
-}*/
-
-void ListaEsferas::Rebote(Wall wall) {
+/*void ListaEsferas::Rebote(Wall wall) {
 	for (int i = 0; i < num; i++) {
 		Interaction::Rebote(*(lista[i]), wall);
 	}
-}
+}*/
 
 void ListaEsferas::Rebote() {
 	for (int i = 0; i < num; i++) {
