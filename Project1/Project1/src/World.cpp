@@ -46,8 +46,8 @@ void World::Move() {
 	Interaction::Rebote(sphere1, sphere2);*/
 	InteraccionListas::Rebote(spheres, box);
 	InteraccionListas::Rebote(spheres, platform);
-	//spheres.Rebote(platform);
-	spheres.Rebote();
+	InteraccionListas::Rebote(spheres);
+	//spheres.Rebote();
 	shoots.Colision(platform);
 	shoots.Colision(box);
 }
