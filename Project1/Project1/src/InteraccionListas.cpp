@@ -30,10 +30,28 @@ void InteraccionListas::Rebote(ListaEsferas& s) {
 	}
 }
 
-Sphere* InteraccionListas::Colision(ListaEsferas& s, Human h) {
+Sphere* InteraccionListas::Colision(ListaEsferas& s, Human& h) {
 	for (int i = 0; i < s.GetNum(); i++) {
 		if (Interaction::Colision(*(s[i]), h))
 			return s[i];
 	}
 	return 0;
+}
+
+void InteraccionListas::Colision(ListaDisparos& s, Wall w) {
+	for (int i = 0; i < s.GetNum(); i++) {
+		if (Interaction::Colision(*(s[i]), w)) {
+			s[i]->SetSpeed(0, 0);
+			s[i]->SetAcel(0, 0);
+		}
+	}
+}
+
+void InteraccionListas::Colision(ListaDisparos& s, Box b) {
+	for (int i = 0; i < s.GetNum(); i++) {
+		if (Interaction::Colision(*(s[i]), b)) {
+			s[i]->SetSpeed(0, 0);
+			s[i]->SetAcel(0, 0);
+		}
+	}
 }

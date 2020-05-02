@@ -12,11 +12,10 @@ public:
 	bool Add(Sphere* e);
 	void Draw();
 	void Move(float t);
-	int GetNum() { return num; }
 	void Destroy();
 	void Delete(int index); //elimina esfera en la posicion indicada
 	void Delete(Sphere* esphere); //elimina la esfera apuntada por el puntero
-	//Sphere* Colision(Human &h);
+	int GetNum() { return num; }
 	Sphere* operator [](int pos);
 private:
 	Sphere* lista[MAX_NUM];

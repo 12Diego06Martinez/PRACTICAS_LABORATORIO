@@ -14,8 +14,9 @@ public:
 	void Draw();
 	void Destroy();
 	void Move(float t);
-	void Colision(Wall w);
-	void Colision(Box b);
+	int GetNum() { return num; }
+	Shoot* operator [](int pos);
+	//void Colision(Box b);
 private:
 	Shoot* lista[MAX_SHOOT];
 	int num;
