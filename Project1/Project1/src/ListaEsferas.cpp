@@ -15,12 +15,11 @@ ListaEsferas::~ListaEsferas() {
 /////////////////////////////////MÉTODOS////////////////////
 bool ListaEsferas::Add(Sphere* e) {
 	if (num < MAX_NUM) {
-		lista[num] = e;	
+		lista[num] = e;
 		num++;
 	}
-	else {
+	else
 		return false;
-	}
 	return true;
 }
 
@@ -36,11 +35,11 @@ void ListaEsferas::Move(float t) {
 	}
 }
 
-void ListaEsferas::Rebote(Box box) {
+/*void ListaEsferas::Rebote(Box box) {
 	for (int i = 0; i < num; i++) {
 		Interaction::Rebote(*(lista[i]), box);
 	}
-}
+}*/
 
 void ListaEsferas::Rebote(Wall wall) {
 	for (int i = 0; i < num; i++) {
@@ -70,12 +69,11 @@ void ListaEsferas::Delete(int index) {
 	delete lista[index];
 	num--;
 	for (int i=index; i < num; i++) {
-		/*Recorremos la lista desde la posición indicada hasta el 
-		final de la lista. Si por ejemplo eliminamos la esfera en la posición 2, movemos 
-		la posición 3 a la 2, la 4 a la 3 y así sucesivamente hasta num*/
+		//Recorremos la lista desde la posición indicada hasta el 
+		//final de la lista. Si por ejemplo eliminamos la esfera en la posición 2, movemos 
+		//la posición 3 a la 2, la 4 a la 3 y así sucesivamente hasta num
 		lista[i] = lista[i + 1];
 	}
-
 }
 
 void ListaEsferas::Delete(Sphere* sphere) {

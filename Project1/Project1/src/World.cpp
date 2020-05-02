@@ -1,5 +1,6 @@
 #include "World.h"
 #include "Interaction.h"
+#include "InteraccionListas.h"
 #include "glut.h"
 
 //////////////////////////////CONSTRUCTOR///////////////////
@@ -43,7 +44,8 @@ void World::Move() {
 	Interaction::Rebote(sphere2, box);
 	Interaction::Rebote(sphere1, platform);
 	Interaction::Rebote(sphere1, sphere2);*/
-	spheres.Rebote(box);
+	InteraccionListas::Rebote(spheres, box);
+	//spheres.Rebote(box);
 	spheres.Rebote(platform);
 	spheres.Rebote();
 	shoots.Colision(platform);

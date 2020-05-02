@@ -132,7 +132,6 @@ bool Interaction::Colision(Shoot s, Wall w) {
 }
 
 bool Interaction::Colision(Shoot s, Box b) {
-	//Colision(s, b.roof);
 	Vector2D pos;
 	float dif = b.roof.Distance(s.GetPos(), &pos) - s.GetRadius();
 	if (dif <= 0) {

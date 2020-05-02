@@ -12,7 +12,8 @@ public:
 	bool Add(Sphere* e);
 	void Draw();
 	void Move(float t);
-	void Rebote(Box box);
+	int GetNum() { return num; }
+	//void Rebote(Box box);
 	void Rebote(Wall wall);
 	void Rebote();
 	void Destroy();
@@ -20,7 +21,6 @@ public:
 	void Delete(Sphere* esphere); //elimina la esfera apuntada por el puntero
 	Sphere* Colision(Human &h);
 	Sphere* operator [](int pos);
-	int GetNum() { return num; }
 private:
 	Sphere* lista[MAX_NUM];
 	int num;
