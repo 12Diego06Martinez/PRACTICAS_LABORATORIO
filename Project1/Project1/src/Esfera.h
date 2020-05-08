@@ -14,7 +14,7 @@ public:
 	void SetRadio(float rad);
 	void Setvelocidad(float x, float y);
 	friend class Interaccion;
-private:
+protected:
 	float radio;
 	unsigned char rojo;
 	unsigned char verde;

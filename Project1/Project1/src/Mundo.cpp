@@ -26,6 +26,7 @@ void Mundo::Dibujar() {
 	caja.Dibujar();
 	esferas.Dibujar();
 	disparos.Dibujar();
+	esfera_pulsante.Dibujar();
 }
 
 void Mundo::Mueve() {
@@ -33,6 +34,7 @@ void Mundo::Mueve() {
 	humano.Mueve(0.025f);
 	esferas.Mueve(0.025f);
 	disparos.Mueve(0.025f);
+	esfera_pulsante.Mueve(0.025f);
 
 	Esfera* aux = InteraccionListas::Colision(esferas,humano);
 	if (aux != 0)//detecta choque
@@ -45,6 +47,12 @@ void Mundo::Mueve() {
 	InteraccionListas::Rebote(esferas);
 	InteraccionListas::Colision(disparos, plataforma);
 	InteraccionListas::Colision(disparos, caja);
+	Interaccion::Rebote(esfera_pulsante, caja);
+	Interaccion::Rebote(esfera_pulsante, plataforma);
+
+	for (int i = 0; i < esferas.GetNum(); i++) {
+		Interaccion::Rebote(esfera_pulsante, *esferas[i]);
+	}
 }
 
 void Mundo::Inicializa() {

@@ -6,6 +6,7 @@
 #include "Esfera.h"
 #include "ListaEsferas.h"
 #include "ListaDisparos.h"
+#include "EsferaPulsante.h"
 
 class Mundo
 {
@@ -29,5 +30,6 @@ private:
 	Pared plataforma;
 	ListaEsferas esferas;
 	ListaDisparos disparos;
+	EsferaPulsante esfera_pulsante;
 };
 

@@ -9,6 +9,8 @@ protected:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 public:
+	ObjetoMovil();
+	virtual ~ObjetoMovil();
 	void Mueve(float t);
 };
 
