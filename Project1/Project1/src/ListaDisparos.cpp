@@ -3,7 +3,7 @@
 /////////////////////////////////CONSTRUCTOR-DESTRUCTOR////////////////
 ListaDisparos::ListaDisparos() {
 	num = 0;
-	for (int i = 0; i < MAX_SHOOT; i++) {
+	for (int i = 0; i < MAX_Disparo; i++) {
 		lista[i] = 0;
 	}
 }
@@ -13,9 +13,9 @@ ListaDisparos::~ListaDisparos() {
 }
 
 /////////////////////////////METODOS///////////////////////////
-bool ListaDisparos::Add(Shoot* s) {
-	if (num < MAX_SHOOT) {
-		lista[num] = s;
+bool ListaDisparos::Agregar(Disparo* d) {
+	if (num < MAX_Disparo) {
+		lista[num] = d;
 		num++;
 	}
 	else
@@ -23,26 +23,26 @@ bool ListaDisparos::Add(Shoot* s) {
 	return true;
 }
 
-void ListaDisparos::Move(float t) {
+void ListaDisparos::Mueve(float t) {
 	for (int i = 0; i < num; i++) {
-		lista[i]->Move(t);
+		lista[i]->Mueve(t);
 	}
 }
 
-void ListaDisparos::Draw() {
+void ListaDisparos::Dibujar() {
 	for (int i = 0; i < num; i++) {
-		lista[i]->Draw();
+		lista[i]->Dibujar();
 	}
 }
 
-void ListaDisparos::Destroy() {
+void ListaDisparos::Destruir() {
 	for (int i = 0; i < num; i++) {
 		delete lista[i];
 	}
 	num = 0;
 }
 
-Shoot* ListaDisparos::operator[](int pos) {
+Disparo* ListaDisparos::operator[](int pos) {
 	if (pos >= num)//si me paso, devuelvo la ultima   
 		pos = num - 1;
 
@@ -51,12 +51,3 @@ Shoot* ListaDisparos::operator[](int pos) {
 
 	return lista[pos];
 }
-
-/*void ListaDisparos::Colision(Box b) {
-	for (int i = 0; i < num; i++) {
-		if (Interaction::Colision(*(lista[i]), b)) {
-			lista[i]->SetSpeed(0, 0);
-			lista[i]->SetAcel(0, 0);
-		}
-	}
-}*/

@@ -10,48 +10,48 @@ InteraccionListas::~InteraccionListas() {
 }
 
 /////////////////////////////////////METODOS////////////////////
-void InteraccionListas::Rebote(ListaEsferas& s, Box b) {
-	for (int i = 0; i < s.GetNum(); i++) {
-		Interaction::Rebote(*(s[i]), b);
+void InteraccionListas::Rebote(ListaEsferas& e, Caja c) {
+	for (int i = 0; i < e.GetNum(); i++) {
+		Interaccion::Rebote(*(e[i]), c);
 	}
 }
 
-void InteraccionListas::Rebote(ListaEsferas& s, Wall w) {
-	for (int i = 0; i < s.GetNum(); i++) {
-		Interaction::Rebote(*(s[i]), w);
+void InteraccionListas::Rebote(ListaEsferas& e, Pared p) {
+	for (int i = 0; i < e.GetNum(); i++) {
+		Interaccion::Rebote(*(e[i]), p);
 	}
 }
 
-void InteraccionListas::Rebote(ListaEsferas& s) {
-	for (int i = 0; i < s.GetNum(); i++) {
-		for (int j = 0; j < s.GetNum(); j++) {
-			Interaction::Rebote(*(s[i]), *(s[j]));
+void InteraccionListas::Rebote(ListaEsferas& e) {
+	for (int i = 0; i < e.GetNum(); i++) {
+		for (int j = 0; j < e.GetNum(); j++) {
+			Interaccion::Rebote(*(e[i]), *(e[j]));
 		}
 	}
 }
 
-Sphere* InteraccionListas::Colision(ListaEsferas& s, Human& h) {
-	for (int i = 0; i < s.GetNum(); i++) {
-		if (Interaction::Colision(*(s[i]), h))
-			return s[i];
+Esfera* InteraccionListas::Colision(ListaEsferas& e, Humano& h) {
+	for (int i = 0; i < e.GetNum(); i++) {
+		if (Interaccion::Colision(*(e[i]), h))
+			return e[i];
 	}
 	return 0;
 }
 
-void InteraccionListas::Colision(ListaDisparos& s, Wall w) {
-	for (int i = 0; i < s.GetNum(); i++) {
-		if (Interaction::Colision(*(s[i]), w)) {
-			s[i]->SetSpeed(0, 0);
-			s[i]->SetAcel(0, 0);
+void InteraccionListas::Colision(ListaDisparos& d, Pared p) {
+	for (int i = 0; i < d.GetNum(); i++) {
+		if (Interaccion::Colision(*(d[i]), p)) {
+			d[i]->Setvelocidad(0, 0);
+			d[i]->SetAcel(0, 0);
 		}
 	}
 }
 
-void InteraccionListas::Colision(ListaDisparos& s, Box b) {
-	for (int i = 0; i < s.GetNum(); i++) {
-		if (Interaction::Colision(*(s[i]), b)) {
-			s[i]->SetSpeed(0, 0);
-			s[i]->SetAcel(0, 0);
+void InteraccionListas::Colision(ListaDisparos& d, Caja c) {
+	for (int i = 0; i < d.GetNum(); i++) {
+		if (Interaccion::Colision(*(d[i]), c)) {
+			d[i]->Setvelocidad(0, 0);
+			d[i]->SetAcel(0, 0);
 		}
 	}
 }

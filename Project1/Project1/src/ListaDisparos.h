@@ -1,24 +1,23 @@
 #pragma once
-#include "Shoot.h"
-#include "Box.h"
-#include "Interaction.h"
+#include "Disparo.h"
+#include "Caja.h"
+#include "Interaccion.h"
 
-#define MAX_SHOOT 10	
+#define MAX_Disparo 10	
 
 class ListaDisparos
 {
 public:
 	ListaDisparos();
 	~ListaDisparos();
-	bool Add(Shoot* s);
-	void Draw();
-	void Destroy();
-	void Move(float t);
+	bool Agregar(Disparo* d);
+	void Dibujar();
+	void Destruir();
+	void Mueve(float t);
 	int GetNum() { return num; }
-	Shoot* operator [](int pos);
-	//void Colision(Box b);
+	Disparo* operator [](int pos);
 private:
-	Shoot* lista[MAX_SHOOT];
+	Disparo* lista[MAX_Disparo];
 	int num;
 };
 
