@@ -47,12 +47,7 @@ void Disparo::SetPos(float x, float y) {
 	posicion.y = origen.y =y;
 }
 
-void Disparo::Setvelocidad(float vx, float vy) {
-	velocidad.x = vx;
-	velocidad.y = vy;
-}
-
-void Disparo::SetAcel(float ax, float ay) {
-	aceleracion.x = ax;
-	aceleracion.y = ay;
+void Disparo::SetPos(Vector2D pos) {
+	posicion = origen= pos;
+	
 }

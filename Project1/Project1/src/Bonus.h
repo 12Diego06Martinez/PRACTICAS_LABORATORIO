@@ -8,7 +8,6 @@ public:
 	virtual ~Bonus();
 	void Dibujar();
 	void Mueve(float t);
-	void SetPos(float x, float y);
 	void SetSide(float s);
 private:
 	float lado;

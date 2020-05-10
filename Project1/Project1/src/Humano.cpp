@@ -19,20 +19,6 @@ void Humano::Dibujar() {
 	glPopMatrix();
 }
 
-void Humano::SetPos(float x, float y) {
-	posicion.x = x;
-	posicion.y = y;
-}
-
-void Humano::SetVelocidad(float x, float y) {
-	velocidad.x = x;
-	velocidad.y = y;
-}
-
-Vector2D Humano::GetPos() {
-	return posicion;
-}
-
 float Humano::GetAltura() {
 	return altura;
 }

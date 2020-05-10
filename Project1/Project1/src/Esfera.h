@@ -9,10 +9,8 @@ public:
 	Esfera(float rad, float x = 0.0f, float y = 0.0f, float vx = 0.0f, float vy = 0.0f);
 	virtual ~Esfera();
 	void Dibujar();
-	void SetPos(float x, float y);
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 	void SetRadio(float rad);
-	void Setvelocidad(float x, float y);
 	friend class Interaccion;
 protected:
 	float radio;

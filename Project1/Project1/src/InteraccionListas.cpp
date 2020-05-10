@@ -41,7 +41,7 @@ Esfera* InteraccionListas::Colision(ListaEsferas& e, Humano& h) {
 void InteraccionListas::Colision(ListaDisparos& d, Pared p) {
 	for (int i = 0; i < d.GetNum(); i++) {
 		if (Interaccion::Colision(*(d[i]), p)) {
-			d[i]->Setvelocidad(0, 0);
+			d[i]->SetVel(0, 0);
 			d[i]->SetAcel(0, 0);
 		}
 	}
@@ -50,7 +50,7 @@ void InteraccionListas::Colision(ListaDisparos& d, Pared p) {
 void InteraccionListas::Colision(ListaDisparos& d, Caja c) {
 	for (int i = 0; i < d.GetNum(); i++) {
 		if (Interaccion::Colision(*(d[i]), c)) {
-			d[i]->Setvelocidad(0, 0);
+			d[i]->SetVel(0, 0);
 			d[i]->SetAcel(0, 0);
 		}
 	}

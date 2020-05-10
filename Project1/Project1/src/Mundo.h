@@ -6,7 +6,6 @@
 #include "Esfera.h"
 #include "ListaEsferas.h"
 #include "ListaDisparos.h"
-#include "EsferaPulsante.h"
 
 class Mundo
 {
@@ -24,12 +23,9 @@ private:
 	float z_eye;
 	Bonus bonus;
 	Caja caja;
-	Esfera esfera1;
-	Esfera esfera2;
 	Humano humano;
 	Pared plataforma;
 	ListaEsferas esferas;
 	ListaDisparos disparos;
-	EsferaPulsante esfera_pulsante;
 };
 

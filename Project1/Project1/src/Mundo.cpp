@@ -1,6 +1,7 @@
 #include "Mundo.h"
 #include "Interaccion.h"
 #include "InteraccionListas.h"
+#include "EsferaPulsante.h"
 #include "glut.h"
 
 //////////////////////////////CONSTRUCTOR///////////////////
@@ -26,7 +27,6 @@ void Mundo::Dibujar() {
 	caja.Dibujar();
 	esferas.Dibujar();
 	disparos.Dibujar();
-	esfera_pulsante.Dibujar();
 }
 
 void Mundo::Mueve() {
@@ -34,7 +34,6 @@ void Mundo::Mueve() {
 	humano.Mueve(0.025f);
 	esferas.Mueve(0.025f);
 	disparos.Mueve(0.025f);
-	esfera_pulsante.Mueve(0.025f);
 
 	Esfera* aux = InteraccionListas::Colision(esferas,humano);
 	if (aux != 0)//detecta choque
@@ -47,12 +46,6 @@ void Mundo::Mueve() {
 	InteraccionListas::Rebote(esferas);
 	InteraccionListas::Colision(disparos, plataforma);
 	InteraccionListas::Colision(disparos, caja);
-	Interaccion::Rebote(esfera_pulsante, caja);
-	Interaccion::Rebote(esfera_pulsante, plataforma);
-
-	for (int i = 0; i < esferas.GetNum(); i++) {
-		Interaccion::Rebote(esfera_pulsante, *esferas[i]);
-	}
 }
 
 void Mundo::Inicializa() {
@@ -66,28 +59,23 @@ void Mundo::Inicializa() {
 	//Inicialización plataforma
 	plataforma.SetLimites(-5.0f, 9.0f, 5.0f, 9.0f);
 	//Inicialización de esferas
-	Esfera* esfera1 = new Esfera(1.5, 2, 4, 5, 15);
-	esfera1->SetColor(255, 0, 0);
-	esferas.Agregar(esfera1);
+	Esfera* esfera3 = new EsferaPulsante();
+	esfera3->SetColor(0, 255, 0);
+	esferas.Agregar(esfera3);
 
-	Esfera* esfera2 = new Esfera(2, 8, 2, -5, 15);
-	esfera2->SetColor(100, 100, 100);
-	esferas.Agregar(esfera2);
-
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i <=6; i++) {
 		Esfera* aux = new Esfera(0.75 + i * 0.25, i, 1 + i, i, i);
 		esferas.Agregar(aux);
 	}
-
 }
 
 void Mundo::SpecialKey(unsigned char key){
 	switch(key) {
 		case GLUT_KEY_LEFT:
-			humano.SetVelocidad(-5.0f, 0.0f);
+			humano.SetVel(-5.0f, 0.0f);
 			break;
 		case GLUT_KEY_RIGHT:
-			humano.SetVelocidad(5.0f, 0.0f);
+			humano.SetVel(5.0f, 0.0f);
 			break;
 	}
 }
@@ -98,7 +86,7 @@ void Mundo::Key(unsigned char key) {
 		{
 			Disparo* d = new Disparo();
 			Vector2D pos = humano.GetPos();
-			d->SetPos(pos.x, pos.y);
+			d->SetPos(pos);
 			disparos.Agregar(d);
 			break;
 		}

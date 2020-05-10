@@ -11,6 +11,12 @@ protected:
 public:
 	ObjetoMovil();
 	virtual ~ObjetoMovil();
-	void Mueve(float t);
+	virtual void Mueve(float t);
+	void SetPos(float x, float y);
+	void SetPos(Vector2D pos);
+	void SetVel(float vx, float vy);
+	void SetAcel(float ax, float ay);
+	Vector2D GetPos();
+	
 };
 

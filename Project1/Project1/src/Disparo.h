@@ -11,11 +11,9 @@ public:
 	void Dibujar();
 	void SetRadio(float rad); //altura
 	void SetPos(float x, float y);
-	void Setvelocidad(float vx, float vy);
-	void SetAcel(float ax, float ay);
+	void SetPos(Vector2D pos);
 	float GetRadio() { return radio; }
-	Vector2D GetPos() { return posicion; }
-private:
+protected:
 	float radio;
 	Vector2D origen;
 };

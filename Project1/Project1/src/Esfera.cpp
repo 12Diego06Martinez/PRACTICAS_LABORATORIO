@@ -32,11 +32,6 @@ void Esfera::Dibujar() {
 	glTranslated(-posicion.x, -posicion.y, 0);
 }
 
-void Esfera::SetPos(float x, float y) {
-	posicion.x = x;
-	posicion.y=y;
-}
-
 void Esfera::SetColor(unsigned char r, unsigned char g, unsigned char b) {
 	rojo = r;
 	verde = g;
@@ -47,9 +42,4 @@ void Esfera::SetRadio(float rad) {
 	if (rad > 0) {
 		radio = rad;
 	}
-}
-
-void Esfera::Setvelocidad(float x, float y) {
-	velocidad.x = x;
-	velocidad.y = y;
 }

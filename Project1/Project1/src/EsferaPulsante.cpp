@@ -1,19 +1,12 @@
 #include "EsferaPulsante.h"
 
 /////////////////////////////////////CONSTRUCTOR-DESTRUCTOR/////////////
-//EsferaPulsante::EsferaPulsante() {
-
-//}
-
-EsferaPulsante::EsferaPulsante(float p, float r_max, float r_min, float x, float y, float vx, float vy) {
-	pulso = p;
-	radio_max = r_max;
-	radio_min = r_min;
-	posicion.x = x;
-	posicion.y = y;
-	velocidad.x = vx;
-	velocidad.y = vy;
-	aceleracion.y = 0;
+EsferaPulsante::EsferaPulsante() {
+	pulso = 0.5f;
+	radio_max = 2.0f;
+	radio_min = 0.5f;
+	aceleracion.y = 0.0f;
+	posicion.y = 5.0f;
 }
 EsferaPulsante::~EsferaPulsante() {
 
