@@ -28,3 +28,17 @@ void EsferaPulsante::Mueve(float t) {
 	verde = 255 - radio * 100; 
 	azul = 100 + radio * 50;
 }
+
+Esfera* EsferaPulsante::Dividir() {
+	if (radio_min < 1.0)//si la esfera es muy pequeña no se divide
+		return 0;
+
+	//Cuando dividimos la esfera
+	radio /= 2.0;
+	EsferaPulsante* aux = new EsferaPulsante(*this); //copia de la esfera
+	aux->SetVel(5, 8); //velocidad de la copia
+	SetVel(-5, 8); //velocidad de la original
+	aux->SetPulso(1.0f);
+	SetPulso(1.0f);
+	return aux;
+}

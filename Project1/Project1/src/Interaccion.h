@@ -19,4 +19,5 @@ public:
 	static bool Colision(Esfera e, Humano h);
 	static bool Colision(Disparo d, Pared p);
 	static bool Colision(Disparo d, Caja c);
+	static bool Colision(Disparo d, Esfera e);
 };

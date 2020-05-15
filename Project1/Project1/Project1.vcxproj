@@ -104,8 +104,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\ETSIDIlib2017\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\ETSIDIlib2017\lib;$(LibraryPath)</LibraryPath>
     <OutDir>.\bin</OutDir>
     <IntDir>.\temp</IntDir>
   </PropertyGroup>
@@ -114,8 +114,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\include;D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\ETSIDIlib2017\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\glut-376\lib;D:\DIEGO\PROGRAMAS\INFORMATICA INDUSTRIAL\LIBRERIAS\ETSIDIlib2017\lib;$(LibraryPath)</LibraryPath>
     <OutDir>.\bin</OutDir>
     <IntDir>.\temp</IntDir>
   </PropertyGroup>
@@ -128,13 +128,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalUsingDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\Project1\Project1\lib;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glut32.lib;ETSIDI.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\Project1\Project1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -157,7 +157,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalUsingDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\Project1\Project1\lib;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -165,7 +165,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glut32.lib;ETSIDI.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>G:\CURSO 2018-2019\SEGUNDO CUATRI\INFORMATICA\LABORATORIO\PROGRAMAS PRACTICAS\PRACTICAS_LABORATORIO\Project1\Project1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

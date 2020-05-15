@@ -51,3 +51,35 @@ Disparo* ListaDisparos::operator[](int pos) {
 
 	return lista[pos];
 }
+
+void ListaDisparos::SetPos(float x, float y) {
+	for (int i = 0; i < num; i++) {
+		lista[i]->SetPos(x, y);
+	}
+}
+
+void ListaDisparos::SetVel(float vx, float vy) {
+	for (int i = 0; i < num; i++) {
+		lista[i]->SetVel(vx, vy);
+	}
+}
+
+void ListaDisparos::Delete(int index) {
+	if ((index < 0) || (index >= num)) {
+		return;
+	}
+	delete lista[index];
+	num--;
+	for (int i = index; i < num; i++) {
+		lista[i] = lista[i + 1];
+	}
+}
+
+void ListaDisparos::Delete(Disparo* disparo) {
+	for (int i = 0; i < num; i++) {
+		if (lista[i] == disparo) {
+			Delete(i);
+			return;
+		}
+	}
+}

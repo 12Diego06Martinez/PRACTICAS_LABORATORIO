@@ -15,5 +15,6 @@ public:
 	static Esfera* Colision(ListaEsferas& e, Humano& h);
 	static void Colision(ListaDisparos& e, Pared p);
 	static void Colision(ListaDisparos& e, Caja c);
+	static void Colision(ListaDisparos& d, ListaEsferas& e);
 };
 

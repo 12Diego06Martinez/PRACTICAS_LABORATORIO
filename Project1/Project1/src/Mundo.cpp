@@ -2,6 +2,7 @@
 #include "Interaccion.h"
 #include "InteraccionListas.h"
 #include "EsferaPulsante.h"
+#include "ETSIDI.h"
 #include "glut.h"
 
 //////////////////////////////CONSTRUCTOR///////////////////
@@ -35,10 +36,10 @@ void Mundo::Mueve() {
 	esferas.Mueve(0.025f);
 	disparos.Mueve(0.025f);
 
-	Esfera* aux = InteraccionListas::Colision(esferas,humano);
-	if (aux != 0)//detecta choque
-		esferas.Delete(aux);
-		
+	//Esfera* aux = InteraccionListas::Colision(esferas,humano);
+		//if (aux != 0)//detecta choque
+			//esferas.Delete(aux);
+
 	//Interacción entre los objetos
 	Interaccion::Rebote(humano, caja);
 	InteraccionListas::Rebote(esferas, caja);
@@ -46,6 +47,7 @@ void Mundo::Mueve() {
 	InteraccionListas::Rebote(esferas);
 	InteraccionListas::Colision(disparos, plataforma);
 	InteraccionListas::Colision(disparos, caja);
+	//InteraccionListas::Colision(esferas, disparos);
 }
 
 void Mundo::Inicializa() {
@@ -63,7 +65,7 @@ void Mundo::Inicializa() {
 	esfera3->SetColor(0, 255, 0);
 	esferas.Agregar(esfera3);
 
-	for (int i = 0; i <=6; i++) {
+	for (int i = 0; i <6; i++) {
 		Esfera* aux = new Esfera(0.75 + i * 0.25, i, 1 + i, i, i);
 		esferas.Agregar(aux);
 	}

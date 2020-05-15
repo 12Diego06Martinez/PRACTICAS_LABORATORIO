@@ -1,4 +1,5 @@
 #include "InteraccionListas.h"
+#include "ETSIDI.h"
 
 ///////////////////////////////CONSTRUCTOR-DESTRUCTOR//////////////
 InteraccionListas::InteraccionListas() {
@@ -53,5 +54,24 @@ void InteraccionListas::Colision(ListaDisparos& d, Caja c) {
 			d[i]->SetVel(0, 0);
 			d[i]->SetAcel(0, 0);
 		}
+	}
+}
+
+void InteraccionListas::Colision(ListaDisparos& d, ListaEsferas& e) {
+	for (int i = 0; i < d.GetNum(); i++) {
+		for (int j = 0; j < e.GetNum(); j++) {
+			if (Interaccion::Colision(*d[i], *e[j])) {
+				Esfera* esf = e[j]->Dividir();
+				if (esf == 0)
+					e.Delete(e[j]);
+				else
+					e.Agregar(esf);
+				d.SetPos(0, 0);
+				d.SetVel(0, 10);
+				//ETSIDI::play("sonidos/impacto_balas.wav");
+				break;
+			}
+		}
+		
 	}
 }

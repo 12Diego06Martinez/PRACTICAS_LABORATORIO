@@ -13,6 +13,7 @@ public:
 	void SetPos(float x, float y);
 	void SetPos(Vector2D pos);
 	float GetRadio() { return radio; }
+	friend class Interaccion;
 protected:
 	float radio;
 	Vector2D origen;

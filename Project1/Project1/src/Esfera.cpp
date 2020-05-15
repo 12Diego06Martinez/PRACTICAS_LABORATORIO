@@ -43,3 +43,15 @@ void Esfera::SetRadio(float rad) {
 		radio = rad;
 	}
 }
+
+Esfera* Esfera::Dividir() {
+	if (radio < 0.1)
+		return 0; //no se divide la esfera
+
+	//Cuando dividimos la esfera
+	radio /= 2.0;
+	Esfera* aux = new Esfera(*this); //copia de la esfera
+	aux->SetVel(5, 8); //velocidad mitad copiada
+	SetVel(-5, 8); //velocidad mitad original
+	return aux;
+}

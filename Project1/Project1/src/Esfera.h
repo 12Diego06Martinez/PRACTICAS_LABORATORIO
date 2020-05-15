@@ -11,6 +11,7 @@ public:
 	void Dibujar();
 	void SetColor(unsigned char r, unsigned char g, unsigned char b);
 	void SetRadio(float rad);
+	virtual Esfera* Dividir();
 	friend class Interaccion;
 protected:
 	float radio;

@@ -14,6 +14,10 @@ public:
 	void Dibujar();
 	void Destruir();
 	void Mueve(float t);
+	void SetPos(float x, float y);
+	void SetVel(float vx, float vy);
+	void Delete(int index);
+	void Delete(Disparo* disparo);
 	int GetNum() { return num; }
 	Disparo* operator [](int pos);
 private:

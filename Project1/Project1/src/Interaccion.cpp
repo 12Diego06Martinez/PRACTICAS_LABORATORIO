@@ -141,3 +141,14 @@ bool Interaccion::Colision(Disparo d, Caja c) {
 		return false;
 }
 
+bool Interaccion::Colision(Disparo d, Esfera e) {
+	Pared aux;
+	Vector2D p1 = e.posicion;
+	Vector2D p2 = d.origen;
+	aux.SetLimites(p1.x, p1.y, p2.x, p2.y);
+	float distancia = aux.Distancia(e.posicion);
+	if (distancia < e.radio)
+		return true;
+	return false;
+}
+
