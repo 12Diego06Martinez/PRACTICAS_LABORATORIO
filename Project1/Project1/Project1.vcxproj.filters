@@ -57,6 +57,9 @@
     <ClInclude Include="src\EsferaPulsante.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="src\CoordinadorPang.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Principal.cpp">
@@ -102,6 +105,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\EsferaPulsante.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CoordinadorPang.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,9 +2,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "glut.h"
-#include "Mundo.h"
+#include "CoordinadorPang.h"
 
-Mundo miMundo;
+//#include "Mundo.h"
+//Mundo miMundo;
+
+CoordinadorPang pang;
 
 
 //Funciones necesarias
@@ -37,7 +40,7 @@ int main(int argc, char* argv[])
 	glutSpecialFunc(OnSpecialKeyboardDown);
 
 	//Llamada a métodos
-	miMundo.Inicializa();
+	//miMundo.Inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -64,7 +67,7 @@ void OnDibujar(void){
 	glLoadIdentity();
 
 	//LLAMAR AL MÉTODO Dibujar DE LA CLASE MUNDO   (dibuja todos los objetos)
-	miMundo.Dibujar();
+	//miMundo.Dibujar();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS
@@ -73,7 +76,7 @@ void OnDibujar(void){
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t){
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	miMundo.Key(key);
+	//miMundo.Key(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
@@ -81,7 +84,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t){
 
 void OnSpecialKeyboardDown(int key, int x_t, int y_t){
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	miMundo.SpecialKey(key);
+	//miMundo.SpecialKey(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
@@ -89,7 +92,7 @@ void OnSpecialKeyboardDown(int key, int x_t, int y_t){
 
 void OnTimer(int value){
 	//LLAMAR AL METODO Mueve DE LA CLASE MUNDO (actualiza mundo y esferas)
-	miMundo.Mueve();
+	//miMundo.Mueve();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS

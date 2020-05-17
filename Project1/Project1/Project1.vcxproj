@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Caja.h" />
+    <ClInclude Include="src\CoordinadorPang.h" />
     <ClInclude Include="src\EsferaPulsante.h" />
     <ClInclude Include="src\Humano.h" />
     <ClInclude Include="src\InteraccionListas.h" />
@@ -37,6 +38,7 @@
   <ItemGroup>
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Caja.cpp" />
+    <ClCompile Include="src\CoordinadorPang.cpp" />
     <ClCompile Include="src\EsferaPulsante.cpp" />
     <ClCompile Include="src\Humano.cpp" />
     <ClCompile Include="src\InteraccionListas.cpp" />

@@ -15,12 +15,15 @@ public:
 	void Dibujar();
 	void Mueve();
 	void Inicializa();
-	void SpecialKey(unsigned char key);
-	void Key(unsigned char key);
+	void TeclaEspecial(unsigned char key);
+	void Tecla(unsigned char key);
+	int GetNumEsferas();
+	bool GetImpacto() { return impacto; }
 private:
 	float x_eye;
 	float y_eye;
 	float z_eye;
+	bool impacto;
 	Bonus bonus;
 	Caja caja;
 	Humano humano;

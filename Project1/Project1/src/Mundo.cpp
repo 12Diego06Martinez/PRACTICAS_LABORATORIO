@@ -31,14 +31,16 @@ void Mundo::Dibujar() {
 }
 
 void Mundo::Mueve() {
+
+	Esfera* aux = InteraccionListas::Colision(esferas,humano);
+	if (aux != 0)//detecta choque
+		impacto = true;
+			//esferas.Delete(aux);
+
 	bonus.Mueve(0.025f);
 	humano.Mueve(0.025f);
 	esferas.Mueve(0.025f);
 	disparos.Mueve(0.025f);
-
-	//Esfera* aux = InteraccionListas::Colision(esferas,humano);
-		//if (aux != 0)//detecta choque
-			//esferas.Delete(aux);
 
 	//Interacción entre los objetos
 	Interaccion::Rebote(humano, caja);
@@ -51,6 +53,7 @@ void Mundo::Mueve() {
 }
 
 void Mundo::Inicializa() {
+	impacto = false;
 	//Posición del ojo
 	x_eye = 0;
 	y_eye = 7.5;
@@ -71,7 +74,7 @@ void Mundo::Inicializa() {
 	}
 }
 
-void Mundo::SpecialKey(unsigned char key){
+void Mundo::TeclaEspecial(unsigned char key){
 	switch(key) {
 		case GLUT_KEY_LEFT:
 			humano.SetVel(-5.0f, 0.0f);
@@ -82,7 +85,7 @@ void Mundo::SpecialKey(unsigned char key){
 	}
 }
 
-void Mundo::Key(unsigned char key) {
+void Mundo::Tecla(unsigned char key) {
 	switch (key) {
 		case ' ':
 		{
@@ -93,5 +96,9 @@ void Mundo::Key(unsigned char key) {
 			break;
 		}
 	}
+}
+
+int Mundo::GetNumEsferas() {
+	return esferas.GetNum();
 }
 
