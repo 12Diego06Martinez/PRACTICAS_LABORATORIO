@@ -43,7 +43,7 @@ void InteraccionListas::Colision(ListaDisparos& d, Pared p) {
 	for (int i = 0; i < d.GetNum(); i++) {
 		if (Interaccion::Colision(*(d[i]), p)) {
 			d[i]->SetVel(0, 0);
-			d[i]->SetAcel(0, 0);
+			//d[i]->SetAcel(0, 0);
 		}
 	}
 }
@@ -52,23 +52,24 @@ void InteraccionListas::Colision(ListaDisparos& d, Caja c) {
 	for (int i = 0; i < d.GetNum(); i++) {
 		if (Interaccion::Colision(*(d[i]), c)) {
 			d[i]->SetVel(0, 0);
-			d[i]->SetAcel(0, 0);
+			//d[i]->SetAcel(0, 0);
 		}
 	}
 }
 
 void InteraccionListas::Colision(ListaDisparos& d, ListaEsferas& e) {
-	for (int i = 0; i < d.GetNum(); i++) {
-		for (int j = 0; j < e.GetNum(); j++) {
-			if (Interaccion::Colision(*d[i], *e[j])) {
-				Esfera* esf = e[j]->Dividir();
+	for (int i = 0; i < e.GetNum(); i++) {
+		for (int j = 0; j < d.GetNum(); j++) {
+			if (Interaccion::Colision(*d[j], *e[i])) {
+				Esfera* esf = e[i]->Dividir();
 				if (esf == 0)
-					e.Delete(e[j]);
+					e.Delete(e[i]);
 				else
 					e.Agregar(esf);
-				d.SetPos(0, 0);
-				d.SetVel(0, 10);
-				//ETSIDI::play("sonidos/impacto_balas.wav");
+				d.Delete(d[j]);
+				//d.SetPos(0, 0);
+				//d.SetVel(0, 10);
+				ETSIDI::play("sonidos/impacto_balas.wav");
 				break;
 			}
 		}

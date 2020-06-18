@@ -6,6 +6,9 @@ Interaccion::Interaccion() {
 
 }
 
+Interaccion::~Interaccion() {
+
+}
 ///////////////////////////METODOS///////////////////////////
 void Interaccion::Rebote(Humano& h, Caja c) {
 	float x_max = c.suelo.limite2.x;
@@ -134,7 +137,7 @@ bool Interaccion::Colision(Disparo d, Pared p) {
 bool Interaccion::Colision(Disparo d, Caja c) {
 	Vector2D pos;
 	float dif = c.tejado.Distancia(d.GetPos(), &pos) - d.GetRadio();
-	if (dif <= 0) {
+	if (dif < 0.0f) {
 		return true;
 	}
 	else
@@ -143,7 +146,7 @@ bool Interaccion::Colision(Disparo d, Caja c) {
 
 bool Interaccion::Colision(Disparo d, Esfera e) {
 	Pared aux;
-	Vector2D p1 = e.posicion;
+	Vector2D p1 = d.posicion;
 	Vector2D p2 = d.origen;
 	aux.SetLimites(p1.x, p1.y, p2.x, p2.y);
 	float distancia = aux.Distancia(e.posicion);

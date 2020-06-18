@@ -45,7 +45,7 @@ void Esfera::SetRadio(float rad) {
 }
 
 Esfera* Esfera::Dividir() {
-	if (radio < 0.1)
+	if (radio < 1.0f)
 		return 0; //no se divide la esfera
 
 	//Cuando dividimos la esfera

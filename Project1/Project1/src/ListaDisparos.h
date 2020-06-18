@@ -1,7 +1,7 @@
 #pragma once
 #include "Disparo.h"
 #include "Caja.h"
-#include "Interaccion.h"
+
 
 #define MAX_Disparo 10	
 
@@ -9,7 +9,7 @@ class ListaDisparos
 {
 public:
 	ListaDisparos();
-	~ListaDisparos();
+	virtual ~ListaDisparos();
 	bool Agregar(Disparo* d);
 	void Dibujar();
 	void Destruir();

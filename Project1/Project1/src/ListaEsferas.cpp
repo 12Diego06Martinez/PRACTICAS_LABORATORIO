@@ -1,4 +1,5 @@
 #include "ListaEsferas.h"
+#include "Interaccion.h"
 
 /////////////////////////////////CONSTRUCTOR////////////////////
 ListaEsferas::ListaEsferas() {
@@ -15,12 +16,18 @@ ListaEsferas::~ListaEsferas() {
 /////////////////////////////////MÉTODOS////////////////////
 bool ListaEsferas::Agregar(Esfera* e) {
 	if (num < MAX_NUM) {
+		for (int i = 0; i < num; i++) {
+			if (lista[i] == e) {
+				return false;
+			}
+		}
 		lista[num] = e;
 		num++;
+		return true;
 	}
 	else
 		return false;
-	return true;
+	
 }
 
 void ListaEsferas::Dibujar() {

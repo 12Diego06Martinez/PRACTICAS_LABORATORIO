@@ -9,6 +9,7 @@ public:
 	void Dibujar();
 	void Mueve(float t);
 	void SetSide(float s);
+	friend class Interaccion;
 private:
 	float lado;
 };

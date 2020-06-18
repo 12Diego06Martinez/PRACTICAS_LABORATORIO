@@ -18,7 +18,3 @@ void Humano::Dibujar() {
 	glutSolidSphere(altura, 20, 20);
 	glPopMatrix();
 }
-
-float Humano::GetAltura() {
-	return altura;
-}

@@ -60,7 +60,14 @@ float Vector2D::operator*(const Vector2D &v) {
 
 Vector2D Vector2D::operator*(float num) {
 	Vector2D vector;
-	vector.x = x * num;
-	vector.y = y * num;
+	vector.x =  num*x;
+	vector.y = num*y;
 	return vector;
+}
+
+Vector2D Vector2D::operator +(float r) {
+	Vector2D res;
+	res.x = x + r;
+	res.y = y + r;
+	return res;
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include "Vector2D.h"
 #include "ObjetoMovil.h"
 
 class Esfera:public ObjetoMovil
@@ -13,6 +12,7 @@ public:
 	void SetRadio(float rad);
 	virtual Esfera* Dividir();
 	friend class Interaccion;
+	float GetRadio() { return radio; }
 protected:
 	float radio;
 	unsigned char rojo;

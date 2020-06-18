@@ -1,11 +1,12 @@
 #include "ListaDisparos.h"
+#include "Interaccion.h"
 
 /////////////////////////////////CONSTRUCTOR-DESTRUCTOR////////////////
 ListaDisparos::ListaDisparos() {
-	num = 0;
 	for (int i = 0; i < MAX_Disparo; i++) {
 		lista[i] = 0;
 	}
+	num = 0;
 }
 
 ListaDisparos::~ListaDisparos() {
@@ -15,12 +16,18 @@ ListaDisparos::~ListaDisparos() {
 /////////////////////////////METODOS///////////////////////////
 bool ListaDisparos::Agregar(Disparo* d) {
 	if (num < MAX_Disparo) {
+		for (int i = 0; i < num; i++) {
+			if (lista[i] == d) {
+				return false;
+			}
+		}
 		lista[num] = d;
 		num++;
+		return true;
 	}
 	else
 		return false;
-	return true;
+	
 }
 
 void ListaDisparos::Mueve(float t) {

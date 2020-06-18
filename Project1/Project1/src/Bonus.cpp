@@ -6,7 +6,7 @@
 
 ////////////////////////CONSTRUCTOR////////////////////////////
 Bonus::Bonus() {
-	lado = 2;
+	lado = 1;
 	aceleracion.y = -9.8f;
 }
 
@@ -21,7 +21,7 @@ void Bonus::Dibujar() {
 	glRotatef(30, 1, 1, 1);  
 	glColor3f(	rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 
 				rand() / (float)RAND_MAX); //color aleatorio    
-		glutSolidCube(lado);  
+	glutSolidCube(lado);  
 	glPopMatrix(); 
 }
 

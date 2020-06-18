@@ -11,7 +11,7 @@ de agrupar todas estas funcionee. */
 class Interaccion {
 public:
 	Interaccion();
-	//virtual ~Interaccion();
+	virtual ~Interaccion();
 	static void Rebote(Humano  &h, Caja c);
 	static bool Rebote(Esfera &e, Pared p);
 	static void Rebote(Esfera& e, Caja c);

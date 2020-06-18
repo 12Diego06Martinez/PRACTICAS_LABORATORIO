@@ -1,17 +1,14 @@
 #define _STDC_WANT_IB_EXIT1__1
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "glut.h"
 #include "CoordinadorPang.h"
-
-//#include "Mundo.h"
-//Mundo miMundo;
+#include "glut.h"
 
 CoordinadorPang pang;
 
 
 //Funciones necesarias
-void OnDibujar(void); //esta funcion sera llamada para dibujar
+void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 void OnSpecialKeyboardDown(int key, int x, int y);//para las teclas de cursor
@@ -23,7 +20,7 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv);
 	glutInitWindowSize(800, 600);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutCreateWindow("PRACTICA 2");
+	glutCreateWindow("PANG");
 
 	//Habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
@@ -34,14 +31,14 @@ int main(int argc, char* argv[])
 	gluPerspective(40.0, 800 / 600.0f, 0.1, 150);
 
 	//Registramos los callbacks
-	glutDisplayFunc(OnDibujar);
+	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//cada 25ms llama a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
 	glutSpecialFunc(OnSpecialKeyboardDown);
 
 	//Llamada a métodos
 	//miMundo.Inicializa();
-
+	
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
 
@@ -51,15 +48,7 @@ int main(int argc, char* argv[])
 
 //------------IMPLEMENTACION FUNCIONES--------------
 
-/*void DibujarTorus(Torus t) {
-
-	glColor3ub(t.rojo, t.verde, t.azul);
-	glTranslatef(t.x, t.y, t.z);
-	glutSolidTorus(t.in_radio, t.out_radio, 20, 20);
-
-}*/
-
-void OnDibujar(void){
+void OnDraw(void){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Borrado de la pantalla
 
 	//Definimos el punto de vista
@@ -67,7 +56,7 @@ void OnDibujar(void){
 	glLoadIdentity();
 
 	//LLAMAR AL MÉTODO Dibujar DE LA CLASE MUNDO   (dibuja todos los objetos)
-	//miMundo.Dibujar();
+	pang.Dibuja();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS
@@ -76,7 +65,7 @@ void OnDibujar(void){
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t){
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	//miMundo.Key(key);
+	pang.Tecla(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
@@ -84,7 +73,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t){
 
 void OnSpecialKeyboardDown(int key, int x_t, int y_t){
 	//LLAMAR AL MÉTODO DE LA CLASE MUNDO (gestiona la interacción con el teclado)
-	//miMundo.SpecialKey(key);
+	pang.TeclaEspecial(key);
 
 	//NO BORRAR ESTAS LINEAS
 	glutPostRedisplay();
@@ -92,7 +81,7 @@ void OnSpecialKeyboardDown(int key, int x_t, int y_t){
 
 void OnTimer(int value){
 	//LLAMAR AL METODO Mueve DE LA CLASE MUNDO (actualiza mundo y esferas)
-	//miMundo.Mueve();
+	pang.Mueve();
 	
 
 	//NO BORRAR NUNCA ESTAS LINEAS

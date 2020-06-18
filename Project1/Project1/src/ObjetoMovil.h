@@ -15,8 +15,7 @@ public:
 	void SetPos(float x, float y);
 	void SetPos(Vector2D pos);
 	void SetVel(float vx, float vy);
-	void SetAcel(float ax, float ay);
-	Vector2D GetPos();
+	Vector2D GetPos() { return posicion; }
 	
 };
 

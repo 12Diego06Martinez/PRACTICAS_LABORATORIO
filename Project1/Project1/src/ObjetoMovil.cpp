@@ -27,15 +27,6 @@ void ObjetoMovil::SetVel(float vx, float vy) {
 	velocidad.y = vy;
 }
 
-void ObjetoMovil::SetAcel(float ax, float ay) {
-	aceleracion.x = ax;
-	aceleracion.y = ay;
-}
-
-Vector2D ObjetoMovil::GetPos() {
-	return posicion;
-}
-
 void ObjetoMovil::SetPos(Vector2D pos) {
 	posicion.x = pos.x;
 	posicion.y = pos.y;

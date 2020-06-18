@@ -1,6 +1,6 @@
 #pragma once
 #include "Esfera.h"
-#include "Interaccion.h"
+
 
 #define MAX_NUM 100
 

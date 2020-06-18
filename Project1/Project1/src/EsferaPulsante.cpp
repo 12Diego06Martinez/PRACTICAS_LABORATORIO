@@ -24,9 +24,10 @@ void EsferaPulsante::Mueve(float t) {
 		pulso = -pulso;
 
 	radio += pulso * t;
-	rojo = radio * 255;  
+	Esfera::SetColor(radio * 255, 255 - radio * 100, 100 + radio * 50);
+	/*rojo = radio * 255;  
 	verde = 255 - radio * 100; 
-	azul = 100 + radio * 50;
+	azul = 100 + radio * 50;*/
 }
 
 Esfera* EsferaPulsante::Dividir() {
@@ -34,11 +35,10 @@ Esfera* EsferaPulsante::Dividir() {
 		return 0;
 
 	//Cuando dividimos la esfera
-	radio /= 2.0;
+	radio /= 2.0f;
+	pulso *= 2.0f;
 	EsferaPulsante* aux = new EsferaPulsante(*this); //copia de la esfera
 	aux->SetVel(5, 8); //velocidad de la copia
 	SetVel(-5, 8); //velocidad de la original
-	aux->SetPulso(1.0f);
-	SetPulso(1.0f);
 	return aux;
 }
